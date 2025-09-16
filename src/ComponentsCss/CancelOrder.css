@@ -1,0 +1,146 @@
+.cancel_corder_main {
+    color: #fff;
+    background: #FFFFFF;
+    padding: 15px 20px 50px;
+}
+
+.cancel_order_form h5 {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #000000;
+}
+
+.custom-select-wrapper {
+    position: relative;
+}
+
+.custom-select {
+    appearance: none;
+    /* Hide default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 100%;
+    height: 55px;
+    border: 1px solid #000000;
+    border-radius: 27px;
+    font-family: Geist;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 15px;
+    color: #000000;
+}
+
+.custom-select-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url(../../public/images/arrowDawn.svg);
+    background-size: 16px;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    right: 20px;
+}
+
+.custom-select option {
+    color: black;
+    background-color: #fff;
+}
+
+.cancel_description textarea {
+    background-color: transparent;
+    color: #000000;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #000000;
+    border-radius: 12px;
+}
+
+.cancel_description textarea::placeholder {
+    color: #000000 !important;
+    opacity: 1;
+}
+
+.cancel_order_submit_btn {
+    border-radius: 15px;
+    background: linear-gradient(#8950B4, #4A186E);
+    display: flex;
+    width: 206px;
+    height: 55px;
+    padding: 12.986px 55.942px;
+    justify-content: center;
+    align-items: center;
+    gap: 9.99px;
+    color: #FFF;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+}
+
+.instructions_inner h5 {
+    color: #000000;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.instructions_inner ul li {
+    font-family: Geist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: #000000;
+    padding-bottom: 10px;
+}
+
+.instructions_inner ul li a {
+    color: #8950B4;
+}
+
+.replece_note a {
+    color: #8950B4;
+}
+
+.replece_note  {
+    font-family: Geist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: #000000;
+}
+
+.replece_note a:hover {
+    opacity: .9;
+}
+
+.upload-text {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    background: linear-gradient(90deg, #FFF 0%, #999 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: start;
+    cursor: pointer;
+}

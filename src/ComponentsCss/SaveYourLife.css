@@ -1,0 +1,133 @@
+.save-your-life-section {
+    padding: 50px 0 50px;
+}
+
+.save-your-life-container {
+    background: linear-gradient(#4A186E, #8950B4);
+    padding: 40px;
+}
+
+
+.save-your-life-left h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 132%;
+    background: linear-gradient(90deg, #FFF 0%, #999 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.save-your-life-left p {
+    font-family: Geist;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 156%;
+    color: #FFFFFF;
+}
+
+.save-your-life-right {
+    text-align: center;
+}
+
+.save-your-life-right h2 {
+    font-family: TECWO;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 100%;
+    background: linear-gradient(90deg, #FFF 0%, #999 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.save-your-life-right p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    background: linear-gradient(90deg, #FFF 0%, #999 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 575.98px) {
+    .save-your-life-right {
+        text-align: center !important;
+    }
+
+    .save-your-life-right p {
+        text-align: center !important;
+        font-size: 14px;
+
+    }
+
+    .save-your-life-container {
+        padding: 40px 25px;
+    }
+}
+
+.save-your-life-left h3 {
+    font-size: 25px;
+}
+
+.save-your-life-right h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.save-your-life-right {
+    text-align: start;
+    margin-bottom: 15px;
+}
+
+.save-your-life-right p {
+    text-align: start;
+}
+
+@media (max-width: 575.98px) {
+    .save-your-life-section {
+        padding: 10px 0 50px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .save-your-life-right {
+        text-align: center;
+    }
+
+    .save-your-life-right p {
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .save-your-life-left h3 {
+        font-size: 27px;
+    }
+
+    .save-your-life-right {
+        text-align: center !important;
+    }
+
+    .save-your-life-right p {
+        text-align: center;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1440.98px) {
+    .save-your-life-left h3 {
+        font-size: 27px;
+    }
+
+    .save-your-life-right {
+        text-align: center !important;
+    }
+
+    .save-your-life-right p {
+        text-align: center;
+    }
+}

@@ -1,0 +1,24 @@
+.our-smart-pet {
+   padding: 60px 0px 60px 0px;
+}
+
+
+.our-smart-pet-image img {
+   margin-left: 60px;
+}
+
+@media (max-width: 575.98px) {
+   .our-smart-pet .row {
+      flex-direction: column-reverse;
+   }
+
+   .our-smart-pet-image img {
+      margin-left: 0px;
+   }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+   .our-smart-pet-image img {
+      margin-left: 0px;
+   }
+}

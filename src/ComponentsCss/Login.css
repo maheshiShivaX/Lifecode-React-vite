@@ -1,0 +1,335 @@
+/* login */
+
+.oncurser {
+    cursor: pointer;
+}
+
+.login-container .login-container {
+    position: relative;
+}
+
+
+.login-form-right {
+    margin-left: 120px;
+}
+
+.login-form-left-image img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.round-shape {
+    border-radius: 661.268px;
+    background: rgba(255, 98, 98, 0.21);
+    filter: blur(279.54998779296875px);
+    width: 497.268px;
+    height: 497.268px;
+    flex-shrink: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+}
+
+.login-form {
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 100px 100px;
+    width: 65%;
+}
+
+.login-form h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 100%;
+    margin-bottom: 12px;
+    text-align: center;
+    color: #000000;
+}
+
+.login-form p {
+    font-family: Geist;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 25px !important;
+}
+
+.login-form input {
+    width: 100%;
+    height: 55px;
+    border: 1px solid #000000;
+    border-radius: 27px;
+    background-color: transparent;
+    font-family: Geist;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 15px;
+    color: #000000;
+}
+
+.login-form input::placeholder {
+    color: #000000;
+}
+
+
+.login-form input:focus {
+    outline: none;
+    border: 1px solid #724693 !important;
+    box-shadow: 0px 0px 10px #724693;
+}
+
+.login-form button {
+    background: linear-gradient(rgb(74, 24, 110), rgb(137, 80, 180));
+    width: 206px;
+    height: 55px;
+    border: none;
+    border-radius: 88.91px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    margin: auto;
+    margin-top: 52px;
+    display: block;
+}
+
+::placeholder {
+    color: red;
+    opacity: 1;
+    font-family: Geist;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #fff;
+}
+
+::-ms-input-placeholder {
+    font-family: Geist;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #fff;
+}
+
+/* login End */
+
+
+/* Otp */
+.otp-container {
+    display: flex;
+    gap: 20px;
+}
+
+.otp-box {
+    width: 65px !important;
+    height: 65px !important;
+    border-radius: 18.32px !important;
+    border-width: 1.65px;
+    border: 1.5px solid #000000 !important;
+    border-radius: 12px;
+    /* Rounded corners */
+}
+
+.otp-container input {
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 21.98px;
+    line-height: 100%;
+    color: #000000;
+}
+
+.otp-container input:focus {
+    outline: none;
+    border: 2px solid #FF4A4F !important;
+    box-shadow: 0px 0px 10px rgba(255, 74, 79, 0.5);
+}
+
+.otp-form .login-form p {
+    margin: 0 !important;
+    padding-bottom: 15px !important;
+}
+
+.otp-form span {
+    font-family: Geist;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: #000000;
+}
+
+.otp-form a {
+    font-family: Geist;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.otp-phone-number {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.otp-phone-number span {
+    font-family: Geist;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #000000;
+}
+
+.otp-phone-number p {
+    margin: 0 !important;
+}
+
+
+.resend-otp {
+    margin: 0;
+    margin-top: 25px;
+}
+
+.resend-otp a {
+    text-decoration: underline !important;
+}
+
+.otp_input_inner_wepper div {
+    justify-content: center;
+}
+
+.otp_input_inner_wepper input {
+    width: 65px !important;
+    height: 65px !important;
+    border-radius: 18.32px !important;
+    border-width: 1.65px;
+    border: 1.5px solid #000000 !important;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* OtpEnd */
+
+
+/* Sign Up */
+
+.login-container .input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #000000;
+    border-radius: 9999px;
+    background-color: transparent;
+    padding: 0 15px;
+    gap: 15px;
+    margin-bottom: 17px;
+}
+
+.login-container .input-wrapper input {
+    border: none;
+    padding: 0;
+}
+
+.login-container .input-wrapper input:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none;
+}
+
+.login-container .input-wrapper i {
+    color: #000000;
+    font-size: 18px;
+}
+
+.otp-phone-number p a{
+    color: #000000;
+}
+
+/* Sign Up End */
+@media (min-width: 768px) and (max-width: 991px) {
+    .login-form-right {
+        margin: 0;
+    }
+
+    .login-form {
+        width: 85%;
+        margin: auto;
+        padding: 100px 50px;
+    }
+}
+
+@media (max-width:576px) {
+    .login-form {
+        padding: 50px 20px;
+    }
+
+    .otp_input_inner_wepper input {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .login-form p {
+        font-size: 14px;
+        line-height: 150%;
+        margin-bottom: 8px !important;
+    }
+
+    .login-form button {
+        margin-top: 30px !important;
+    }
+
+    .login-form-left-image img {
+        height: auto;
+    }
+}
+
+@media (max-width:767px) {
+    .login-container .row {
+        flex-direction: column-reverse;
+    }
+
+    .login-form-right {
+        margin: 35px 0;
+    }
+
+    .login-form {
+        width: 85%;
+        margin: auto;
+
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .login-form-right {
+        margin: 0;
+    }
+
+    .login-form {
+        width: 85%;
+        margin: auto;
+        padding: 100px 50px;
+    }
+}
+
+
+@media (min-width: 1200px) and (max-width: 1440.98px) {
+    .login-form {
+        width: 86%;
+        padding: 100px 90px;
+    }
+}

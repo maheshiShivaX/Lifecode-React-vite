@@ -1,0 +1,255 @@
+.search-vehicle {
+    position: relative;
+}
+
+.round_shodow_only {
+    border-radius: 661.268px;
+    background: rgba(255, 98, 98, 0.21);
+    filter: blur(279.54998779296875px);
+    width: 661.268px;
+    height: 661.268px;
+    flex-shrink: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    display: none;
+}
+
+.search-vehicle-inner {
+    /* width: 1520.056px; */
+    height: auto;
+    background-color: #EEEEEE;
+    margin: 60px auto;
+    padding: 40px 0;
+}
+
+.search-vehicle-image img {
+    width: auto;
+}
+
+.search_hedding h2 {
+    color: #000000;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    margin-bottom: 20px;
+}
+
+.search_hedding p {
+    text-align: center;
+    font-family: Geist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: #505050;
+    width: 40%;
+    margin: auto !important;
+    line-height: 20px;
+}
+
+.search-vehicle .input-wrapper {
+    position: relative;
+}
+
+.search-vehicle input[type="text"] {
+    width: 100%;
+    padding: 13px 30px 13px;
+    border: 1.5px solid #000000;
+    border-radius: 30px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-vehicle input::placeholder {
+    color: #000000;
+}
+
+.vehicle-details-main input[type="text"] {
+    border: 1.5px solid #fff;
+}
+
+.vehicle-details-main input::placeholder {
+    color: #fff;
+}
+
+.search-vehicle label {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    color: #000000;
+    background-color: #eeeeee;
+    padding: 0 6px;
+    font-family: Geist;
+    transition: 0.2s ease all;
+    pointer-events: none;
+    font-size: 16px;
+}
+
+.search-vehicle input:focus+label,
+.search-vehicle input:not(:placeholder-shown)+label {
+    top: -11px;
+    left: 30px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.Viewbutton {
+    margin-top: 40px;
+}
+
+.Viewbutton a,
+.Viewbutton span {
+    width: 65%;
+    margin: auto;
+    display: block;
+    text-align: center;
+    padding: 14px 50.942px;
+    border-radius: 15px;
+    background: linear-gradient(#4A186E, #8950B4);
+    /* box-shadow: 12.986px 12.698px 58.739px 0px #4A186E; */
+    color: #FFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+
+.hover-effect {
+    transition: transform 0.3s ease;
+}
+
+.hover-effect:hover {
+    transform: scale(1.1);
+}
+
+.mobile_image {
+    display: none;
+}
+
+@media (max-width: 575.98px) {
+    .search-vehicle-image img {
+        width: 100%;
+    }
+
+    .search-vehicle-inner {
+        padding: 40px 14px;
+        margin: 0;
+    }
+
+    .search-vehicle input[type="text"] {
+        width: 92%;
+    }
+
+    .search-vehicle label {
+        left: 35px;
+    }
+
+    .search-vehicle .input-wrapper {
+        text-align: center;
+    }
+
+    .search-vehicle-image {
+        margin-top: 25px;
+    }
+
+    .mobile_image {
+        display: block;
+    }
+
+    .mobile_image_notShow {
+        display: none;
+    }
+
+    .search_hedding p {
+        width: 100%;
+        margin-bottom: 20px !important;
+        line-height: normal;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .Viewbutton {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+
+    .Viewbutton a,
+    .Viewbutton span {
+        width: 90% !important;
+    }
+
+    .search_hedding h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .Viewbutton a,
+    .Viewbutton span {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .search_hedding p {
+        width: 100%;
+        margin-bottom: 15px !important;
+    }
+
+    .search-vehicle-image img {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .Viewbutton a,
+    .Viewbutton span {
+        width: 100%;
+        padding: 14px 14.942px;
+    }
+
+    .search_hedding p {
+        width: 100%;
+        margin-bottom: 40px !important;
+    }
+
+    .search-vehicle-image img {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    .Viewbutton a,
+    .Viewbutton span {
+        width: 100%;
+    }
+
+    .search-vehicle-image img {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1440.98px) {
+
+    .Viewbutton a,
+    .Viewbutton span {
+        width: 85%;
+    }
+
+    .search-vehicle-image img {
+        width: 100%;
+    }
+}

@@ -1,0 +1,88 @@
+.cobntact_us_main {
+    padding-bottom: 50px;
+}
+
+.cobntact_us_main .contact-form label {
+    color: #000000;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.cobntact_us_main .contact-form input:focus-visible,
+.cobntact_us_main .contact-form textarea:focus-visible {
+    border: solid rgb(74, 24, 110) 1px;
+    outline: 0;
+}
+
+.cobntact_us_main .contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.cobntact_us_main .contact-form input {
+    width: 100%;
+    height: 55px;
+    border: 1px solid #000000;
+    border-radius: 27px;
+    background-color: transparent;
+    font-family: Geist;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 15px;
+    color: #000000;
+}
+
+
+.cobntact_us_main .contact-form textarea {
+    background-color: transparent;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 180px;
+    padding: 10px;
+}
+
+.cobntact_us_main .contact-form input::placeholder,
+.cobntact_us_main .contact-form textarea::placeholder {
+    color: #000000;
+    font-weight: 400;
+}
+
+.contact_us_submit_btn {
+    background: linear-gradient(rgb(74, 24, 110), rgb(137, 80, 180));
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 0px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.contact_us_submit_btn:hover {
+    background: linear-gradient(rgb(137, 80, 180), rgb(74, 24, 110));
+}
+
+.contact_details p {
+    color: #000000;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.message_contactus {
+    color: #000000;
+    margin-bottom: 25px !important;
+    font-size: 16px;
+}

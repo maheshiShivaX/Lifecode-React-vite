@@ -1,0 +1,218 @@
+.modal-wrapper {
+    position: relative;
+}
+
+.modal-wrapper .modal-header {
+    border-bottom: none !important;
+}
+
+.modal-wrapper .modal-content {
+    background: linear-gradient(rgb(74, 24, 110), rgb(137, 80, 180)) !important;
+    box-shadow: 9px 10px 23.9px 0px rgba(0, 0, 0, 0.61);
+    padding: 25px;
+}
+
+.modal-wrapper .modal-content .close-btn {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.vehicle-details-inner {
+    margin-top: 50px
+}
+
+
+.vehicle-details-inner h2 {
+    color: #ffffff;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    margin-bottom: 15px;
+}
+
+.vehicle-details-inner p {
+    text-align: center;
+    font-family: Geist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    color: #ffffff;
+    opacity: 0.5;
+    margin-bottom: 25px !important;
+}
+
+.input-wrapper {
+    margin-bottom: 20px;
+}
+
+.VerifyDetails_btn {
+    border-radius: 88.907px;
+    background: linear-gradient(95deg, #FF4A4F -16.27%, #8F2020 95.54%);
+    box-shadow: 12.986px 12.698px 58.739px 0px rgba(225, 32, 32, 0.46);
+    display: flex;
+    height: 55px;
+    padding: 12.986px 55.942px;
+    justify-content: center;
+    align-items: center;
+    gap: 9.99px;
+    color: #FFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+    margin: auto;
+}
+
+.VerifyDetails_btn:hover {
+    background: linear-gradient(95deg, #8F2020 -16.27%, #FF4A4F 95.54%);
+    box-shadow: 12.986px 12.698px 58.739px 0px rgba(225, 32, 32, 0.46);
+    color: #FFF;
+}
+
+
+
+.vehicle-details-inner .Resend-sms {
+    border: none;
+    background-color: transparent;
+    background: unset !important;
+    -webkit-text-fill-color: #BA0C0C !important;
+}
+
+.otp_input_outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.otp_input_outer input {
+    border-radius: 50% !important;
+    border: 1px solid #FFF;
+    display: flex;
+    width: 80px !important;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.otp_input_outer input:focus {
+    outline: none;
+    border: 1px solid #BA0C0C;
+}
+
+.resend-sms-time {
+    color: #ACACAC;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.2px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.change_number {
+    color: #FFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 0.2px;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.vehicle-details-inner .download-app ul {
+    justify-content: center;
+}
+
+.vehicle-details-inner a,
+.vehicle-details-inner span {
+    color: #FFF;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.vehicle-details-popup {
+    padding: 0px 0 40px;
+}
+
+.vehicle-details-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vehicle-details-content span {
+    font-family: Geist;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding: 0 60px;
+}
+
+.detail-devider {
+    height: 1px;
+    width: 100%;
+    background-color: #FFFFFF57;
+}
+
+.search-vehicle-close-btn {
+    font-family: Qurova DEMO;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    width: 262px;
+    height: 55px;
+    opacity: 1;
+    top: 743.48px;
+    left: 835.72px;
+    gap: 9.99px;
+    border-radius: 88.91px;
+    padding-top: 12.99px;
+    padding-right: 55.94px;
+    padding-bottom: 12.99px;
+    padding-left: 55.94px;
+    background: #555555;
+    color: #ffffff;
+    border: none;
+}

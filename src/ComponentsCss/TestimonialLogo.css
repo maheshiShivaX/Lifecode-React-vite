@@ -1,0 +1,83 @@
+.testimonial-logo-wrapper {
+    background-color: #F0F0F0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.testimonial-logo-section {
+    margin-bottom: 0;
+}
+
+.testimonial-logo {
+    background-color: #F0F0F0;
+}
+
+.testimonial-logo img {
+    width: auto;
+    mix-blend-mode: multiply;
+}
+
+/* Container hides the overflow */
+.testimonial_slider_wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Track that scrolls infinitely */
+.testimonial_slider_track {
+    display: flex;
+    width: max-content;
+    animation: scrollLeft 20s linear infinite;
+}
+
+/* Each logo block */
+.testimonial_logo_slider {
+    flex: 0 0 auto;
+    padding: 0 20px;
+    /* Adjust spacing */
+}
+
+/* Optional styling for inner content */
+.testimonial_logo_slider_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Keyframes for scrolling */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+.testimonial-logo-section .gallery_media_left p,
+.testimonial-logo-section .gallery_media_left h2 {
+    text-align: center;
+}
+
+@media (max-width:572px) {
+    .testimonial-logo-wrapper {
+        background-color: transparent;
+    }
+
+    /* .testimonial-logo img{
+        width: unset;
+    } */
+    .testimonial-logo {
+        background-color: transparent;
+    }
+    .testimonial_logo_slider{
+        padding: 0;
+    }
+}

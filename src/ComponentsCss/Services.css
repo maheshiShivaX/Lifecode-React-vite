@@ -1,0 +1,82 @@
+.services-container .services-content {
+    gap: 30px;
+    display: flex;
+}
+
+.services-container .services-content .service-box {
+    background: linear-gradient(rgb(74, 24, 110), rgb(137, 80, 180));
+    padding: 35px 23px;
+}
+
+.services-container .services-content .service-box:hover {
+    background: linear-gradient(rgb(137, 80, 180), rgb(74, 24, 110));
+}
+
+.services-container .services-content .service-box h6 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    background: linear-gradient(90deg, #FFFFFF 0%, #999999 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin: 11px 0px;
+}
+
+.services-container .services-content .service-box p {
+    font-family: Geist;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    background: linear-gradient(90deg, #FFFFFF 0%, #999999 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+@media (max-width: 575.98px) {
+    .services-container .services-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .services-container .services-content .service-box {
+        padding: 24px 14px;
+    }
+
+    .services-container .services-content .service-box h6 {
+        font-size: 15px;
+    }
+
+    .services-container .services-content .service-box p {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .services-container .services-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .services-container .services-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {}
+
+@media (min-width: 1400px) {}

@@ -1,0 +1,109 @@
+.smart-business-card {
+    padding: 60PX 0;
+    background-image: url('../../public/images/Smart-bg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.smart-business-card-left-content h3 {
+    background: linear-gradient(90deg, #FFF 0%, #999 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 129%;
+    margin-bottom: 10px;
+}
+
+.smart-business-card-left-content p {
+    font-family: Geist;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 156%;
+    background: linear-gradient(90deg, #FFF 0%, #999 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px !important;
+}
+
+.left-content-arrow {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+
+.left-content-arrow span {
+    font-family: Geist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 156%;
+    background: linear-gradient(90deg, #FFF 0%, #999 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.right-side-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.smart-business-card-btn a {
+    background: linear-gradient(95deg, #FF4A4F -16.27%, #8F2020 95.54%), linear-gradient(93deg, #FFF -34.43%, #999 67.34%, #FFF 146.85%);
+    box-shadow: 5px 4px 5px 0px rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    text-align: center;
+    color: #FFF;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    display: block;
+    width: 300px;
+    height: auto;
+    padding: 20px 26px 17px 26px;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.smart_diveder {
+    width: 100%;
+    height: 1.5px;
+    background-color: #999;
+    margin: 20px 0;
+}
+.smart_sende_row{
+    margin-top: 80px;
+}
+@media (max-width: 575.98px) {
+
+    /* .smart-business-card {
+        padding: 0;
+    } */
+
+    .smart-business-card-left-content h3 {
+        font-size: 24px;
+    }
+
+    .smart-business-card-btn a {
+        width: 100%;
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+
+    .smart_sende_row .row{
+        flex-direction: column-reverse;
+    }
+}

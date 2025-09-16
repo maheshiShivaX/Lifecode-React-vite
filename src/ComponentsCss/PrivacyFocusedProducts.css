@@ -1,0 +1,405 @@
+.privacy-focused-products {
+    padding: 50px 0;
+}
+
+.privacy_heding h2 {
+    color: #724693;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    margin-bottom: 20px;
+}
+
+.privacy_heding p {
+    text-align: center;
+    font-family: Geist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #000000;
+    opacity: 0.5 !important;
+    width: 60%;
+    margin: auto !important;
+    margin-bottom: 50px !important;
+}
+
+.privacy_banner {
+    margin-bottom: 25px;
+}
+
+.privacy_banner .round_shodow_only {
+    left: 0;
+}
+
+.privacy_banner img {
+    width: 100%;
+    height: auto;
+}
+
+.privacy_product_card {
+    text-align: center;
+    background: #EDEDED;
+    border-radius: 15px;
+    padding: 25px;
+    height: 100%;
+}
+
+.privacy_product_card img {
+    margin-bottom: 20px;
+}
+
+.privacy_product_card h5 {
+    color: #363636;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    margin-bottom: 20px;
+}
+
+.privacy_product_card p {
+    text-align: center;
+    font-family: Geist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 20px !important;
+    color: #000000;
+    opacity: .5;
+    width: 100%;
+    margin: auto !important;
+    margin-bottom: 20px !important;
+}
+
+.privacy_product_card a {
+    text-align: center;
+    font-family: Geist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    display: block;
+    background: linear-gradient(90deg, #FF4A4F 0%, #8F2020 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 75px;
+}
+
+.privacy_product_card a:hover {
+    background: linear-gradient(90deg, #FFF 0%, #999 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.privacy_product_line {
+    position: relative;
+    text-align: center;
+}
+
+.privacy_product_line a {
+    border-radius: 88.907px;
+    background: linear-gradient(95deg, #FF4A4F -16.27%, #8F2020 95.54%);
+    box-shadow: 12.986px 12.698px 58.739px 0px rgba(225, 32, 32, 0.46);
+    color: #FFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 10px 20px;
+    text-decoration: none !important;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    width: 15%;
+    margin: auto;
+}
+
+.hover-effect {
+    transition: transform 0.3s ease;
+}
+
+.hover-effect:hover {
+    transform: scale(1.1);
+}
+
+.privacy-focused-products .scroll-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #FFF;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 30.927px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    background: #3A3A3A;
+    box-shadow: 0px 15.905px 22.179px 0px rgba(0, 0, 0, 0.25);
+    padding: 15px 0;
+    transform: rotate(-1.684deg);
+    margin: 90px 0;
+}
+
+.privacy-focused-products .scroll-content {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.privacy-focused-products .scroll-item {
+    display: inline-block;
+    margin: 0 20px;
+    transition: color 0.3s ease;
+}
+
+.privacy-focused-products .scroll-item:hover {
+    color: #FF4A4F;
+    transition: color 0.3s ease;
+}
+
+
+/* NOva BG */
+
+.nova_bg {
+    background-image: url(../../public/images/novaBg.png);
+    background-repeat: no-repeat;
+    height: auto;
+    padding: 85px 0;
+    position: relative;
+}
+
+.nova_wepper {
+    display: flex;
+}
+
+.nova_logo {
+    text-align: center;
+}
+
+.nova_titele h3 {
+    font-family: Poppins;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 24px;
+    width: 50%;
+    color: #724693;
+    margin-bottom: 40px;
+
+}
+
+.nova_logo img {
+    width: 200px;
+    margin: auto;
+}
+
+.nova_bg .row {
+    margin-top: 50px;
+}
+
+.novarightside {
+    text-align: end;
+}
+
+.novarightside img {
+    width: 34%;
+}
+
+.nova_btn {
+    width: 605px;
+    height: 60px;
+    padding: 2px;
+    /* Thickness of border */
+    border-radius: 50px;
+    background: linear-gradient(112.26deg,
+            #E63CCE 17.93%,
+            #E9FFFF 30.02%,
+            #6261E1 41.22%,
+            #4AD9FE 64.07%);
+    display: inline-block;
+}
+
+.nova_btn_inner {
+    background: #202226;
+    border-radius: 50px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+}
+
+.novarightside {
+    position: absolute;
+    right: 0;
+}
+
+.nova_btn_inner img {
+    margin-left: 10px;
+}
+
+.nova_btn a {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    color: #FFFFFF;
+
+}
+
+.destop_none {
+    display: none;
+}
+
+.nova_logo h4 {
+    font-size: 20px;
+}
+
+/* NOva BG SATRT */
+
+
+@media (max-width: 575.98px) {
+    .mobile_none_nova {
+        display: none;
+    }
+
+    .destop_none {
+        display: block;
+    }
+
+    .novarightside {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .privacy_heding h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .privacy_heding p {
+        width: 100%;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .privacy_product_card a {
+        margin-bottom: 10px;
+    }
+
+    .privacy_product_line a {
+        width: 60%;
+    }
+
+    .privacy_product_card p {
+        width: 90%;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    .privacy_product_card h5 {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .scroll-container {
+        margin: 0 !important;
+    }
+
+    .privacy_section {
+        overflow: unset;
+    }
+
+    .nova_bg {
+        background-position: top;
+    }
+
+    .nova_titele h3 {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .novarightside img {
+        width: 80%;
+    }
+
+    .nova_btn {
+        width: 100%;
+    }
+
+    .nova_bg .row {
+        flex-direction: column-reverse;
+    }
+
+    .nova_logo img {
+        width: 150px;
+    }
+
+}
+@media (min-width: 600px) and (max-width: 767px) {
+    .nova_titele h3{
+        width: 100%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .privacy_product_line a {
+        width: 50%;
+    }
+
+    .scroll-container {
+        margin-top: 40px !important;
+    }
+
+    .nova_titele h3 {
+        width: 100%;
+        font-size: 21px;
+    }
+}
+
+@media (max-width:767px) {
+    .privacy_product_line a {
+        width: 60%;
+    }
+
+    .scroll-container {
+        margin-top: 40px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .privacy_product_card p {
+        width: 100%;
+    }
+
+    .privacy_product_line a {
+        width: 30%;
+    }
+
+    .privacy_product_card h5 {
+        font-size: 20px;
+    }
+
+    .nova_titele h3{
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 1200px) and (max-width: 1440.98px) {
+    .nova_titele h3{
+        width: 100%;
+    }
+}

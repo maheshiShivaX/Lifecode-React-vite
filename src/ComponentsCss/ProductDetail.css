@@ -1,0 +1,380 @@
+.product_detail_header {
+    text-align: center;
+    padding: 70px 0px;
+    background: linear-gradient(#4A186E, #8950B4);
+    margin-bottom: 50px;
+}
+
+.product_detail_header h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #724693 !important;
+    -webkit-text-fill-color: unset !important;
+}
+
+.product_image_content {
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0px 0px 23.2px 0px #724693 inset;
+    border: 2px solid transparent;
+}
+
+.product_image_content.active {
+    border: 2px solid #724693;
+}
+
+/* detail section css */
+.product_detail_header h1
+/* .product_detail_content_main .product_detail_content .product_detail_name,
+.product_detail_content_main .product_detail_content .product_sale_price,
+.product_detail_content_main .product_detail_content .product_rating p, */
+/* .tag-durability span,
+.tag-durability-content .tag-durability-box p,
+.specification div p,
+.brands_container p, */
+/* .brands_container h4  */
+{
+    color: #ffffff !important;
+    -webkit-text-fill-color: unset !important;
+}
+
+.tag-durability p {
+    font-family: "Poppins", sans-serif;
+    color: #000000 !important;
+    font-size: 18px;
+}
+
+.Private_name  {
+    font-family: "Poppins", sans-serif;
+    color: #000000 !important;
+    font-size: 18px;
+}
+
+.product_detail_content_main .product_detail_content .product_detail_name {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 10px;
+    color: #000000 !important;
+}
+
+.product_price,
+.tag-durability,
+.product_detail_buttons {
+    margin: 25px 0px;
+}
+
+.product_detail_content_main .product_detail_content .product_short_description {
+    font-family: Geist;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: normal;
+    color: #000000;
+    opacity: 0.5;
+}
+
+.product_detail_content_main .product_detail_content .product_sale_price {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: #000000 !important;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.product_rating_main svg {
+    stroke: #FFEB3B;
+    fill: #FFEB3B;
+    stroke-width: 0;
+    width: 22;
+    height: 22;
+}
+
+.product_detail_content_main .product_detail_content .product_rating p,
+.specification div p {
+    font-family: Geist;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+}
+
+.tag-durability-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 15px 0;
+
+}
+
+.tag-durability-content .tag-durability-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tag-durability span,
+.tag-durability-content .tag-durability-box p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.display_description {
+    font-family: Geist;
+    font-weight: 300;
+    font-size: 16px;
+    color: #d8d4d4;
+    line-height: 32px;
+}
+
+.product_add_cart_btn {
+    margin-bottom: 25px;
+}
+
+.product_add_cart_btn .product_quantity,
+.product_add_cart_btn button {
+    border: 1px solid #DFDFDF;
+    border-radius: 88.91px;
+    border-width: 1px;
+    height: 64px;
+    background-color: transparent;
+    /* box-shadow: 12.99px 12.7px 58.74px 0px #FFFFFF75; */
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000;
+}
+
+.product_add_cart_btn button {
+    width: 100%;
+}
+
+.product_add_cart_btn .product_quantity {
+    width: 160px;
+}
+
+.product_add_cart_btn .product_quantity input,
+.product_add_cart_btn .product_quantity input:focus,
+.product_add_cart_btn .product_quantity input:focus-visible {
+    width: 100%;
+    height: 100%;
+    border-radius: 88.91px;
+    background-color: transparent;
+    color: #ffffff;
+    /* padding: 0px 20px; */
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.product_buy_now_btn .wishlist {
+    width: 64px !important;
+    height: 64px;
+    gap: 12.8px;
+    border-radius: 42.23px;
+    border-width: 1.28px;
+    padding: 19.04px;
+    border: 1.28px solid #DFDFDF;
+    background-color: transparent;
+}
+
+.product_buy_now_btn .buy_now {
+    height: 64px;
+    border-radius: 88.91px;
+    padding-top: 12.99px;
+    padding-right: 55.94px;
+    padding-bottom: 12.99px;
+    padding-left: 55.94px;
+    background: linear-gradient(rgb(74, 24, 110), rgb(137, 80, 180));
+    border: 1px solid transparent;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.product_buy_now_btn .buy_now:hover {
+    background: linear-gradient(rgb(137, 80, 180), rgb(74, 24, 110));
+}
+
+.specification {
+    margin-bottom: 40px;
+}
+
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #FFF;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 30.927px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    background: #724693;
+    box-shadow: 0px 15.905px 22.179px 0px rgba(0, 0, 0, 0.25);
+    padding: 15px 0;
+    transform: rotate(-1.684deg) !important;
+    margin-top: 60px;
+    margin-bottom: 80PX;
+}
+
+.scroll-content img {
+    fill: red;
+    width: 100px;
+    padding: 0 20px;
+}
+
+.product_detail .scroll-content {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.product_detail .scroll-item {
+    display: inline-block;
+    margin: 0 20px;
+    transition: color 0.3s ease;
+}
+
+.product_detail .scroll-item:hover {
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+/* brands section css */
+
+.brands_container {
+    margin: 150px 0px 100px;
+    text-align: center;
+}
+
+.brands_container h4 {
+    font-family: Qurova DEMO;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 129%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.brands_container p {
+    font-family: Geist;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 15px !important;
+}
+
+
+@media (max-width: 575.98px) {
+    .product_detail_header h1 {
+        font-size: 24px;
+    }
+
+    .product_detail_header {
+        padding: 50px 0px;
+    }
+
+    .breadcrumb-item a,
+    .breadcrumb-item.active {
+        font-size: 12px;
+    }
+
+    .product_detail_content_inner {
+        padding-top: 24px;
+    }
+
+    .product_price,
+    .tag-durability,
+    .product_detail_buttons {
+        margin: 30px 0px;
+    }
+
+    .tag-durability-content {
+        display: grid;
+        align-items: center;
+        gap: 25px;
+        margin-top: 15px;
+    }
+
+    .product_add_cart_btn .product_quantity {
+        width: 80%;
+    }
+
+    .product_detail .scroll-container {
+        margin-top: 40px;
+        margin-bottom: 0px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .product_detail_content_main {
+        margin-top: 15px;
+    }
+
+    .product_detail .scroll-container {
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+
+    .product-more-information-container {
+        margin: 50px 0 !important;
+    }
+
+    .ourproduct_section .ourproduct_heding {
+        padding: 36px 0 0;
+    }
+
+    .ourproduct_section .ourproduct_heding p {
+        margin-bottom: 0 !important;
+        width: 80% !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .product_detail .scroll-container {
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+
+    .tag-durability-content {
+        justify-content: center;
+    }
+
+    .tag-durability-box {
+        display: block !important;
+        text-align: center;
+    }
+
+    .tag-durability-box img {
+        margin-bottom: 15px;
+    }
+
+    .tag-durability-content .tag-durability-box p {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {}
+
+@media (min-width: 1400px) {}

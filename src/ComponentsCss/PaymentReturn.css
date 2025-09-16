@@ -1,0 +1,85 @@
+.payment_return_main {
+    min-height: 80vh;
+    background: linear-gradient(#4A186E, #8950B4);
+}
+
+.payment_return_main .container {
+    padding: 0;
+}
+
+.payment_return_content,
+.payment_return_inner {
+    padding-top: 200px;
+
+}
+
+.payment_return_text_container {
+    border: 1px solid #ffffff59;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    color: black;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.payment_return_text_container .order_placed_title {
+    color: #83cd5f;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.payment_return_text_container .order_placed_title_failed {
+    color: #ff1515;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.payment_return_text_container p {
+    color: #000000;
+}
+
+.continue_shopping_btn {
+    width: 70%;
+    height: 50px;
+    border-radius: 88.907px;
+ background: linear-gradient(#4A186E, #8950B4);
+    color: #FFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    padding: 10px 28px;
+}
+
+.success_order_gif img,
+.failed_order_gif img {
+    width: 250px;
+    height: 250px;
+}
+
+@media (max-width: 575.98px) {
+    .payment_return_text_container .order_placed_title {
+        font-size: 20px;
+    }
+
+    .success_order_gif img,
+    .failed_order_gif img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .payment_return_text_container {
+        width: 90%;
+    }
+
+    .continue_shopping_btn {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,127 @@
+.product-more-information-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background: #EDEDED;
+    margin: 150px 0px;
+}
+
+.product-more-information-content {
+    width: 100%;
+}
+
+.product-more-information-content .nav-pills {
+    border-bottom: 1px solid #00000033;
+    justify-content: center;
+    padding: 30px 10px !important;
+}
+
+/* .product-more-information .nav .nav-item button.active::after {
+    content: "";
+    border-bottom: 4px solid var(--bs-danger);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    border-radius: 5px 5px 0 0;
+} */
+
+.product-more-information .nav .nav-item button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    background-color: transparent;
+    border: none;
+    color: #464646;
+}
+
+.product-more-information .nav .nav-item button.active {
+    color: #724693;
+}
+
+.display_description p {
+    font-size: 16px;
+    color: #767676;
+}
+
+.product-more-information-content .display_description {
+    color: #464646;
+    font-weight: 400;
+}
+
+/* Ensure only active tab-pane is shown, others hidden */
+.tab-details .tab-pane {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    height: 0;
+    overflow: hidden;
+}
+
+.tab-details .tab-pane.active {
+    display: block;
+    opacity: 1;
+    height: auto;
+    overflow: visible;
+}
+
+.product-more-information-content .tab-details {
+    padding: 30px 50px;
+}
+
+.product-more-information-content .nav .nav-link:hover {
+    color: #464646 !important;
+}
+
+.product-more-information-content .tab-details .tab-pane {
+    font-family: Geist;
+    font-weight: 84;
+    font-size: 16px;
+    line-height: 170%;
+    letter-spacing: 0%;
+    background: linear-gradient(90deg, #FFFFFF 0%, #999999 100%);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color: transparent; */
+    background-clip: text;
+    /* color: transparent; */
+}
+
+
+
+@media (max-width: 575.98px) {
+
+    .product-more-information-container {
+        margin: 70px 0px;
+    }
+
+    .product-more-information .nav .nav-item button {
+        font-size: 14px;
+    }
+
+    .product-more-information-content .nav-pills {
+        padding: 12px 10px !important;
+    }
+
+    .product-more-information-content .tab-details {
+        padding: 18px 14px;
+    }
+
+    .display_description {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .product-more-information-container {
+        margin: 70px 0px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {}
+
+@media (min-width: 1400px) {}
