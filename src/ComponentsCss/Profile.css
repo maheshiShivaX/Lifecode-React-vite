@@ -3,6 +3,8 @@
     height: 120px;
     width: 120px;
     object-fit: cover;
+    border: 1px solid #000000;
+    padding: 5px;
 }
 
 .profile_image {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import OtpInput from "react-otp-input";
 import { SendOtp, VerifyOTP } from '@/_Services/apiFunctions';
 import { toast } from 'react-toastify';
@@ -13,6 +13,7 @@ import { ShopContext } from '../Context/ShopContext';
 
 const Login = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const [ph, setPh] = useState("");
     const [otp, setOtp] = useState("");
     const [showOtpInput, setShowOtpInput] = useState(false);
@@ -31,7 +32,10 @@ const Login = () => {
         wishlist,
         isLoggedIn,
         fetchCart,
-        guestIntId
+        guestIntId,
+        setToggleMenu,
+        closeModal,
+        isLoginForm
     } = useContext(ShopContext);
 
     const productBySlug = {
@@ -48,6 +52,16 @@ const Login = () => {
         referral_code: "",
         guest_id: guestIntId,
     });
+
+    useEffect(() => {
+        if (guestIntId && !formData.guest_id) {
+            setFormData((prev) => ({
+                ...prev,
+                guest_id: guestIntId,
+            }));
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [guestIntId]); // ✅ but you're telling ESLint to back off
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -138,6 +152,9 @@ const Login = () => {
             localStorage.removeItem('guest_id');
             fetchWishlist();
             fetchCart();
+            setToggleMenu(false);
+            closeModal();
+            setShowOtpInput(false);
         } else if (response?.status === 2) {
             setShowSignUpForm(true);
             setShowOtpInput(false);
@@ -147,7 +164,7 @@ const Login = () => {
 
     // Automatically verify OTP when 6 digits are entered
     useEffect(() => {
-        if (showOtpInput && otp.length === 6) {
+        if (showOtpInput && otp.length === 4) {
             verifyOtp();
         }
         // eslint-disable-next-line
@@ -161,7 +178,7 @@ const Login = () => {
 
         try {
             const response = await SignUp(formData);
-            
+
             if (response.status === 1) {
                 const { id } = response.user;
                 toast.success("Login Successfull!");
@@ -183,6 +200,8 @@ const Login = () => {
                 localStorage.removeItem('guest_id');
                 fetchWishlist();
                 fetchCart();
+                setToggleMenu(false);
+                closeModal();
             }
         } catch {
             toast.error("Please try again after some time");
@@ -204,93 +223,131 @@ const Login = () => {
     }
 
     useEffect(() => {
-        if (isLoggedIn) {
-            navigate('/products');
+        if (isLoggedIn && location.pathname === "/login") {
+            navigate("/products");
         }
-        // run only once on mount
+        // run only on mount
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
-        <section className="login-container">
-            <div className='container-fluid p-0'>
-                {/* Login  */}
-                <div className="row align-items-center">
-                    <div className='col-md-5 p-0'>
-                        <div className='login-form-left-image'>
-                            <img src="./images/loginbanner.webp" alt="Login" className='img-fluid' />
+        <>
+            {isLoginForm && (
+                <div className="modal fade show" style={{ display: "block" }} tabIndex="-1">
+                    <div className="modal-dialog modal-dialog-centered login_form_model" style={{ zIndex: 9999 }}>
+                        <div className="modal-content" style={{ background: "#F0F0F0", borderRadius: "15px" }}>
+                            {/* <div className="modal-header"> */}
+                            {/* <h5 className="modal-title">Login</h5> */}
+                            <button type="button" className="btn-close login_model_close" onClick={closeModal}></button>
+                            {/* </div> */}
+                            <div className="modal-body" style={{ background: "#F0F0F0", borderRadius: "15px" }}>
+                                <section className="login-container">
+                                    <div className='container-fluid d-flex justify-content-center'>
+                                        {/* Login  */}
+                                        <div className="row align-items-center justify-content-between w-100">
+                                            {/* <div className='col-md-5 p-0 login-form-image-section'>
+                                                <div className='login-form-left-image'>
+                                                    <img src="./images/loginbanner.webp" alt="Login" className='img-fluid' />
+                                                </div>
+                                            </div> */}
+                                            {!showSignUpForm && (
+                                                <div className=''>
+                                                    <div className='login-form-right'>
+                                                        <form className='login-form' onSubmit={showOtpInput ? verifyOtp : sendOtp}>
+                                                            {showOtpInput ? (
+                                                                <div>
+                                                                    <h2>OTP Verification</h2>
+                                                                    <p>We Have Sent Verification OTP to<br />
+                                                                        <div className='otp-phone-number mt-3'>
+                                                                            <span>+91 {ph}</span>
+                                                                            <p className='oncurser' onClick={onEdit} style={{ textDecoration: 'underline' }}>EDIT</p>
+                                                                        </div>
+                                                                    </p>
+                                                                    <div className="otp_input_inner_wepper">
+                                                                        <OtpInput
+                                                                            className="otp_input_inner"
+                                                                            value={otp}
+                                                                            onChange={handleOtpChange}
+                                                                            numInputs={4}
+                                                                            renderSeparator={<span>-</span>}
+                                                                            renderInput={(props) => (
+                                                                                <input
+                                                                                    {...props}
+                                                                                    inputMode="numeric"
+                                                                                    pattern="\d*"
+                                                                                    autoComplete="one-time-code"
+                                                                                />
+                                                                            )}
+                                                                        />
+
+                                                                    </div>
+                                                                </div>
+                                                            ) : (
+                                                                <>
+                                                                    <h2>Log in</h2>
+                                                                    <p>Whatsapp Number to Get OTP</p>
+                                                                    <input
+                                                                        type="tel"
+                                                                        inputMode="numeric"
+                                                                        pattern="[0-9]*"
+                                                                        className=""
+                                                                        id="mobileNo"
+                                                                        name="mobileNo"
+                                                                        aria-describedby="emailHelp"
+                                                                        placeholder="Enter Mobile Number"
+                                                                        value={ph}
+                                                                        onChange={handleMobileChange}
+                                                                        autocomplete="off"
+                                                                    />
+                                                                </>
+                                                            )}
+                                                            <button type='submit' className='hover-effect'>
+                                                                {loading ? (
+                                                                    <ClipLoader size={20} color="#fff" />
+                                                                ) : (
+                                                                    showOtpInput ? 'Verify Otp' : 'Login'
+                                                                )}
+                                                            </button>
+                                                            {showOtpInput && (
+                                                                <div className='otp-phone-number resend-otp'>
+                                                                    <span>Not Received OTP ?</span>
+                                                                    <p className='oncurser' onClick={sendOtp}>Resend OTP</p>
+                                                                </div>
+                                                            )}
+                                                        </form>
+                                                        <div className='round-shape'>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+                                            <Register
+                                                showSignUpForm={showSignUpForm}
+                                                RegisterUser={RegisterUser}
+                                                formData={formData}
+                                                handleChange={handleChange}
+                                                loading={loading}
+                                                ph={ph}
+                                            />
+                                        </div>
+                                    </div >
+                                </section>
+                            </div>
+                            {/* <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary">
+                            Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                            Save changes
+                        </button>
+                    </div> */}
                         </div>
                     </div>
-                    {!showSignUpForm && (
-                        <div className='col-md-7 p-0'>
-                            <div className='login-form-right'>
-                                <form className='login-form' onSubmit={showOtpInput ? verifyOtp : sendOtp}>
-                                    {showOtpInput ? (
-                                        <div>
-                                            <h2>OTP Verification</h2>
-                                            <p>We Have Sent Verification OTP to</p>
-                                            <div className='otp-phone-number'>
-                                                <span>+91 {ph}</span>
-                                                <p className='oncurser' onClick={onEdit} style={{ textDecoration: 'underline' }}>EDIT</p>
-                                            </div>
-                                            <div className="otp_input_inner_wepper">
-                                                <OtpInput
-                                                    className="otp_input_inner"
-                                                    value={otp}
-                                                    onChange={handleOtpChange}
-                                                    numInputs={6}
-                                                    renderSeparator={<span>-</span>}
-                                                    renderInput={(props) => <input {...props} />}
-                                                />
-                                            </div>
-                                        </div>
-                                    ) : (
-                                        <>
-                                            <h2>Log in</h2>
-                                            <p>Fill Your Whatsapp Number to Get OTP</p>
-                                            <input
-                                                type="text"
-                                                className=""
-                                                id="mobileNo"
-                                                name='mobileNo'
-                                                aria-describedby="emailHelp"
-                                                placeholder="Enter Mobile Number"
-                                                value={ph}
-                                                onChange={handleMobileChange}
-                                            />
-                                        </>
-                                    )}
-                                    <button type='submit' className='hover-effect'>
-                                        {loading ? (
-                                            <ClipLoader size={20} color="#fff" />
-                                        ) : (
-                                            showOtpInput ? 'Verify Otp' : 'Request OTP'
-                                        )}
-                                    </button>
-                                    {showOtpInput && (
-                                        <div className='otp-phone-number resend-otp'>
-                                            <span>Not Received OTP ?</span>
-                                            <p className='oncurser' onClick={sendOtp}>Resend OTP</p>
-                                        </div>
-                                    )}
-                                </form>
-                                <div className='round-shape'>
-
-                                </div>
-                            </div>
-                        </div>
-                    )}
-                    <Register
-                        showSignUpForm={showSignUpForm}
-                        RegisterUser={RegisterUser}
-                        formData={formData}
-                        handleChange={handleChange}
-                        loading={loading}
-                        ph={ph}
-                    />
+                    {/* Backdrop */}
+                    <div className="modal-backdrop fade show"></div>
                 </div>
-            </div >
-        </section>
+            )}
+        </>
     );
 }
 

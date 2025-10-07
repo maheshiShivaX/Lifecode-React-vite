@@ -20,14 +20,14 @@ const useSessionCheck = () => {
           sessionStorage.clear();
 
           // Redirect to login page
-          window.location.href = "/login";
+          window.location.href = "/";
         }
       } catch (error) {
         console.error("Invalid token:", error);
         // Optionally clear and redirect if token is broken
         localStorage.clear();
         sessionStorage.clear();
-        window.location.href = "/login";
+        window.location.href = "/";
       }
     };
 

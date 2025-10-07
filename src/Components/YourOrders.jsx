@@ -198,13 +198,23 @@ const YourOrders = () => {
     // ✅ Dynamic filter
     const filteredOrders = orderByLoginId?.filter((order) => {
         if (activeButton === "success/pending") {
-            return order?.order_status === "pending" || order?.order_status === "success";
+            return order?.order_status === "pending" || order?.order_status === "success" || order?.order_status === "ongoing";
         }
         // if (activeButton === "failed") {
         //     return order?.order_status === "failed";
         // }
+        // if (activeButton === "cancel") {
+        //     return order?.order_status === "Canceled" && order?.payment_method === "Canceled";
+        // }
         if (activeButton === "cancel") {
-            return order?.order_status === "Canceled";
+            return (
+                order?.order_status === "Canceled" &&
+                (
+                    order?.payment_method !== "razorpay" ||
+                    (order?.payment_method === "cash_on_delivery" && order?.payment_status === "unpaid") ||
+                    order?.payment_status !== "unpaid"
+                )
+            );
         }
         return true;
     });

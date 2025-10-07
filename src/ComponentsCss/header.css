@@ -1,19 +1,29 @@
 .header {
     padding: 32px 0px;
     background: linear-gradient(180deg, rgba(27, 27, 27, 0.50) 0%, rgba(0, 0, 0, 0.00) 84.81%);
-    /* border-bottom: 1px solid rgba(255, 255, 255, 0.34); */
-    position: absolute;
-    z-index: 1;
+    position: fixed;
+    top: 0;
     width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
 }
 
 .header_other_page {
     padding: 32px 0px;
     background: #EEEEEE;
-    /* border-bottom: 1px solid rgba(255, 255, 255, 0.34); */
-    position: absolute;
-    z-index: 1;
+    position: fixed;
+    top: 0;
     width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hide-header {
+    transform: translateY(-100%);
+}
+
+.name_header.header-scrolled {
+    background: linear-gradient(#4A186E, #8950B4);
 }
 
 ul,
@@ -102,6 +112,7 @@ ol {
     list-style: none;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 .right_menu ul li {
@@ -209,7 +220,7 @@ ol {
 }
 
 .cart_hoverwepper {
-    position: relative;
+    /* position: relative; */
     z-index: 1;
 }
 
@@ -217,16 +228,18 @@ ol {
     position: absolute;
     top: 15px;
     right: -10px;
-    padding: 25px 0px 0;
+    padding: 15px 0px 0;
     display: none;
 }
 
 .hover_show_data .left_menu {
     background: #ffffff;
-    width: 292.598px;
-    padding: 20px 20px 5px;
+    /* max-width: 400.598px; */
+    padding: 0px 15px 0px;
     position: relative;
     right: 0;
+    min-width: 100px;
+    border-radius: 6px;
 }
 
 .cart_hoverwepper:hover .hover_show_data {
@@ -235,7 +248,7 @@ ol {
 
 .hover_show_data a,
 .hover_show_data span {
-    font-size: 20px !important;
+    font-size: 18px !important;
 }
 
 .hover_show_data .left_menu ul {
@@ -244,7 +257,8 @@ ol {
 
 .hover_show_data .left_menu ul li {
     display: block;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    padding: 10px 0;
 }
 
 
@@ -336,10 +350,14 @@ ol {
     display: none;
 }
 
+.mobile_logo_drawer img {
+    max-height: 52px;
+}
+
 .header_other_page .left_menu ul li a,
 .header_other_page .left_menu ul li span {
     color: #272727;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .header_other_page .right_menu ul li i {
@@ -400,10 +418,15 @@ ol {
 
     .top_mobile_header {
         padding: 20px 12px;
-        position: relative;
-        width: 100%;
-        z-index: 1;
+        /* position: relative; */
+        /* width: 100%;
+        z-index: 1; */
         background: linear-gradient(#4A186E, #8950B4);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: transform 0.4s ease-in-out;
     }
 
     .header_other_page {
@@ -598,7 +621,7 @@ ol {
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .header {
-        padding: 20px;
+        padding: 30px 20px;
     }
 
     .left_menu ul {

@@ -19,13 +19,16 @@ const PaymentReturn = () => {
     } = useContext(ShopContext);
 
     useEffect(() => {
-        fetchCart()
+        fetchCart();
         // run only once on mount
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
         const GetPaymentStatus = async () => {
+            if (orderId === 'cash_on_delivery') {
+                return;
+            }
             setLoading(true);
             try {
 
@@ -36,6 +39,7 @@ const PaymentReturn = () => {
 
                 if (response?.isSuccess === 1) {
                     setPaymentResponse(1);
+                    fetchCart();
                 } else {
                     setPaymentResponse(0);
                 }
@@ -48,19 +52,19 @@ const PaymentReturn = () => {
         }
 
         GetPaymentStatus();
-    }, [orderId, cartItemId]);
+    }, [orderId, cartItemId, fetchCart]);
 
     return (
         <Layout>
             <div className="payment_return_main">
                 <div className="payment_return_inner container">
                     {loading ? (
-                        <div className="payment_loader">
-                            loading
+                        <div class="page-loader">
+                            <div class="spinner1"></div>
                         </div>
                     ) : (
                         <div className="payment_return_content ">
-                            {paymentResponse === 1 && (
+                            {paymentResponse === 1 && orderId !== 'cash_on_delivery' && (
                                 <div className="payment_return_text_container text-center">
                                     <div className="return_success_gif_main">
                                         <div className="success_order_gif mb-3">
@@ -74,7 +78,7 @@ const PaymentReturn = () => {
                                     </div>
                                 </div>
                             )}
-                            {paymentResponse === 0 && (
+                            {paymentResponse === 0 && orderId !== 'cash_on_delivery' && (
                                 <div className="payment_return_text_container text-center">
                                     <div className="return_failed_order_main">
                                         <div className="failed_order_gif mb-3">
@@ -83,6 +87,21 @@ const PaymentReturn = () => {
                                     </div>
                                     <div className="order_placed_title_failed">Order Failed!</div>
                                     <p className="mt-2"><b>OrderId:</b> {orderId}</p>
+                                    <div className="mt-4">
+                                        <Link to='/' className="continue_shopping_btn">CONTINUE SHOPPING</Link>
+                                    </div>
+                                </div>
+                            )}
+
+                            {orderId === 'cash_on_delivery' && (
+                                <div className="payment_return_text_container text-center">
+                                    <div className="return_success_gif_main">
+                                        <div className="success_order_gif mb-3">
+                                            <img src="../images/done.gif" alt="" />
+                                        </div>
+                                    </div>
+                                    <div className="order_placed_title">Order Placed Successfully!</div>
+                                    {/* <p className="mt-2"><b>OrderId:</b> {orderId}</p> */}
                                     <div className="mt-4">
                                         <Link to='/' className="continue_shopping_btn">CONTINUE SHOPPING</Link>
                                     </div>

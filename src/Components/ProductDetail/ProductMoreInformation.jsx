@@ -15,7 +15,7 @@ const ProductMoreInformation = (props) => {
                         <button className="nav-link position-relative" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Information</button>
                     </li> */}
                     <li className="nav-item" role="presentation">
-                        <button className="nav-link position-relative" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Reviews ( 500+ )</button>
+                        <button className="nav-link position-relative" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Reviews {`(${productBySlug?.reviews_count})`}</button>
                     </li>
                 </ul>
                 <div className="tab-details" id="pills-tabContent">

@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 const Profile = () => {
     const [customerInfo, setCustomerInfo] = useState(null);
     const [loading, setLoading] = useState(false);
+    
     const [formData, setFormData] = useState({
         f_name: "",
         l_name: "",

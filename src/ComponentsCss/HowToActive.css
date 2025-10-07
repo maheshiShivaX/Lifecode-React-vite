@@ -77,16 +77,18 @@
 .row1 {
     margin-top: 40px !important;
 }
-.logo_app li{
+
+.logo_app li {
     width: 200px;
 }
-.logo_app img{
+
+.logo_app img {
     width: 100%;
     margin: auto;
 }
 
 @media (max-width: 575.98px) {
-    .howto_activate_wepper .about_us_inner{
+    .howto_activate_wepper .about_us_inner {
         padding: 0;
     }
 
@@ -110,6 +112,15 @@
 
     .flex_dairecion_use {
         flex-direction: column-reverse;
+    }
+
+    .activate_content_data ul li {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: normal;
+        margin-bottom: 8px;
+        color: #474747;
     }
 }
 

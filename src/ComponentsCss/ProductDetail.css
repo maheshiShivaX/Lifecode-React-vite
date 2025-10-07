@@ -30,6 +30,7 @@
 
 /* detail section css */
 .product_detail_header h1
+
 /* .product_detail_content_main .product_detail_content .product_detail_name,
 .product_detail_content_main .product_detail_content .product_sale_price,
 .product_detail_content_main .product_detail_content .product_rating p, */
@@ -38,7 +39,7 @@
 .specification div p,
 .brands_container p, */
 /* .brands_container h4  */
-{
+    {
     color: #ffffff !important;
     -webkit-text-fill-color: unset !important;
 }
@@ -49,7 +50,7 @@
     font-size: 18px;
 }
 
-.Private_name  {
+.Private_name {
     font-family: "Poppins", sans-serif;
     color: #000000 !important;
     font-size: 18px;
@@ -311,7 +312,7 @@
     .tag-durability-content {
         display: grid;
         align-items: center;
-        gap: 25px;
+        gap: 18px;
         margin-top: 15px;
     }
 
@@ -322,6 +323,15 @@
     .product_detail .scroll-container {
         margin-top: 40px;
         margin-bottom: 0px;
+    }
+
+    .tag-durability span,
+    .tag-durability-content .tag-durability-box p {
+        font-size: 14px;
+    }
+
+    .tag-durability-box img {
+        height: 25px;
     }
 }
 

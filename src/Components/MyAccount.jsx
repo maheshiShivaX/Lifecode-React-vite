@@ -30,8 +30,8 @@ const MyAccount = () => {
                     <div className="display_block_only pb-5" style={{
                         background: "#ffffff"
                     }}>
-                        <div className="nav flex-column nav-pills me-3 " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <img src="./images/tab_banner.png" alt="" className="tab_image" />
+                        <div className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <img src="./images/tab_banner.webp" alt="" className="tab_image" />
                             <div className="my-account-button-inner">
                                 <button className="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                                     <img src="../images/User.svg" alt="" />

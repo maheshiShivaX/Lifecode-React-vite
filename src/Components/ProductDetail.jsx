@@ -15,6 +15,7 @@ import TestimonialLogo from "./Home/TestimonialLogo";
 import { ShopContext } from "../Context/ShopContext";
 import { useContext } from "react";
 import { toast } from "react-toastify";
+import Login from "./Login";
 
 const ProductDetail = () => {
     const { slug } = useParams();
@@ -34,7 +35,8 @@ const ProductDetail = () => {
         setProductId,
         setIsWishlistClick,
         onPreviousUrl,
-        isLoggedIn
+        isLoggedIn,
+        openModal
     } = useContext(ShopContext);
 
     const isWishlisted = wishlist?.some((item) => item.product_id === productBySlug?.id);
@@ -53,7 +55,8 @@ const ProductDetail = () => {
 
     const handleWishlistToggle = () => {
         if (!isLoggedIn) {
-            navigate('/login');
+            // navigate('/login');
+            openModal();
             setProductId(productBySlug?.id);
             setIsWishlistClick(true);
             onPreviousUrl(`/${slug}`);
@@ -77,7 +80,11 @@ const ProductDetail = () => {
             return;
 
         } else {
-            await addCart(item, cartQty);
+            const res = await addCart(item, cartQty);
+            if (res?.status === 0) {
+                toast(res.message);
+                return;
+            }
 
             toast.success("Add Item in Cart");
             openCartDrawer();
@@ -91,13 +98,18 @@ const ProductDetail = () => {
         if (isCart) {
             await updateCart(cartItem, quantity);
         } else {
-            await addCart(item, quantity);
+            const res = await addCart(item, quantity);
+            if (res?.status === 0) {
+                toast(res.message);
+                return;
+            }
         }
 
         if (isLoggedIn) {
             navigate('/checkout');
         } else {
-            navigate('/login');
+            // navigate('/login');
+            openModal();
             onPreviousUrl(`/checkout`);
         }
 
@@ -138,59 +150,68 @@ const ProductDetail = () => {
     ]
 
     return (
-        <Layout>
-            {loading ? (
-                <div className="page-loader">
-                    <div className="spinner"></div>
-                </div>
-            ) : (
-                <div className="product_detail sec-padding-top">
-                    <div className="product_detail_container">
-                        <div className="product_detail_header">
-                            <h1>{productBySlug?.name}</h1>
-                            <Breadcrumb BreadcrumbMenu={BreadcrumbMenu} />
-                        </div>
-                        <div className="product_detail_inner container">
-                            <div className="product_detail_content row">
-                                <div className="col-lg-5 col-md-6 col-12">
-                                    <div>
-                                        <ImageSection productBySlug={productBySlug} />
+        <>
+            <Layout>
+                {loading ? (
+                    <div className="page-loader">
+                        <div className="spinner"></div>
+                    </div>
+                ) : (
+                    <div className="product_detail sec-padding-top">
+                        <div className="product_detail_container">
+                            <div className="product_detail_header">
+                                <h1>{productBySlug?.name}</h1>
+                                <Breadcrumb BreadcrumbMenu={BreadcrumbMenu} />
+                            </div>
+                            <div className="product_detail_inner container">
+                                <div className="product_detail_content row">
+                                    <div className="col-lg-5 col-md-6 col-12">
+                                        <div>
+                                            <ImageSection productBySlug={productBySlug} />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="col-lg-7 col-md-6 col-12">
-                                    <div className="">
-                                        <ProductContent
-                                            productBySlug={productBySlug}
-                                            handleWishlistToggle={handleWishlistToggle}
-                                            addToCart={addToCart}
-                                            setQuantity={setQuantity}
-                                            quantity={quantity}
-                                            isWishlisted={isWishlisted}
-                                            buyNow={buyNow}
-                                            isLoggedIn={isLoggedIn}
-                                        />
+                                    <div className="col-lg-7 col-md-6 col-12">
+                                        <div className="">
+                                            <ProductContent
+                                                productBySlug={productBySlug}
+                                                handleWishlistToggle={handleWishlistToggle}
+                                                addToCart={addToCart}
+                                                setQuantity={setQuantity}
+                                                quantity={quantity}
+                                                isWishlisted={isWishlisted}
+                                                buyNow={buyNow}
+                                                isLoggedIn={isLoggedIn}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="product-more-information container">
-                            <ProductMoreInformation productBySlug={productBySlug} />
-                        </div>
-                        <div className="more-safety-products container">
-                            <MoreSafetyProducts productBySlug={productBySlug} setQuantity={setQuantity} />
-                        </div>
-                        <div className="services container">
-                            <Services />
-                        </div>
-                        <div className="brands">
-                            <div className="brands_container">
-                                <TestimonialLogo title='How Trustable Our Products' hedding='Brands that we worked with' />
+                            <div className="product-more-information container">
+                                <ProductMoreInformation productBySlug={productBySlug} />
+                            </div>
+                            <div className="more-safety-products container">
+                                <MoreSafetyProducts productBySlug={productBySlug} setQuantity={setQuantity} />
+                            </div>
+                            <div className="services container">
+                                <Services />
+                            </div>
+                            <div className="brands">
+                                <div className="brands_container">
+                                    <TestimonialLogo title='How Trustable Our Products' hedding='Brands that we worked with' />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            )}
-        </Layout>
+                )}
+            </Layout>
+
+            {/* 
+            <div className="login_form_model">
+                <Login />
+            </div> */}
+
+            {/* Modal */}
+        </>
     )
 }
 

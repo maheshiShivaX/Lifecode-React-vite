@@ -15,6 +15,10 @@
    .our-smart-pet-image img {
       margin-left: 0px;
    }
+
+   .our-smart-pet {
+      padding: 42px 0px 56px 0px;
+   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {

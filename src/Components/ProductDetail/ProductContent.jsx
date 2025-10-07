@@ -53,7 +53,7 @@ const ProductContent = (props) => {
                                         </defs>
                                     </svg>
                                 ) : (
-                                    <img src="../images/Heart.svg" alt="" />
+                                    <img src="../../images/Heart.svg" alt="" />
                                 )}
                             </button>
                             <button onClick={() => buyNow(productBySlug)} className="buy_now">Buy Now</button>

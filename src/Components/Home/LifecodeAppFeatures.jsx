@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { LifecodeAppSecuritydData1 } from "../../_Services/SatactData";
 const leftItems = LifecodeAppSecuritydData1.childMenu.slice(0, 4);
 const rightItems = LifecodeAppSecuritydData1.childMenu.slice(4, 8);
+
 const LifecodeAppFeatures = () => {
+    
     return (
         <>
             <section className="lifecode-app-security">

@@ -59,7 +59,7 @@
     gap: 9.99px;
     flex-shrink: 0;
     border-radius: 15px;
-   background-color: #ffffff;
+    background-color: #ffffff;
     color: #000000;
     font-family: "Poppins", sans-serif;
     font-size: 16px;
@@ -79,7 +79,7 @@
 
 .countdown {
     display: grid;
-    grid-template-columns: repeat(2, 183px);
+    grid-template-columns: repeat(2, 151px);
     grid-template-rows: repeat(2, 180px);
     gap: 2px;
     overflow: hidden;
@@ -96,7 +96,7 @@
 
 .countdown .box span {
     color: #fff;
-       font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 55px;
     font-style: normal;
     font-weight: 800;
@@ -152,6 +152,7 @@
 
     .countdown {
         grid-template-rows: repeat(2, 100px);
+        grid-template-columns: repeat(2, 50%);
         width: 100%;
         overflow: hidden;
     }
@@ -164,20 +165,52 @@
         font-size: 16px;
     }
 
+    .LimitedOffer_wepper {
+        margin-bottom: 10px;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    /* .countdown {
+        grid-template-columns: repeat(2, 151px);
+        grid-template-rows: repeat(2, 50%);
+    } */
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .countdown {
-        grid-template-columns: repeat(2, 120px);
-        grid-template-rows: repeat(2, 159px);
+        grid-template-columns: repeat(2, 102px);
+        grid-template-rows: repeat(2, 146px);
+    }
+
+    .countdown .box span {
+        font-size: 40px;
+    }
+
+    .countdown .label {
+        font-size: 16px;
+    }
+
+    .LimitedOffer_card_content p {
+        font-family: "Geist", sans-serif;
+        font-size: 14px;
+        margin-bottom: 20px !important;
     }
 }
 
 
 
-@media (min-width: 1200px) and (max-width: 1440.98px) {
+@media (min-width: 1200px) and (max-width: 1399.98px) {
     .countdown {
-        grid-template-columns: repeat(2, 143px);
+        grid-template-columns: repeat(2, 129px);
+        grid-template-rows: repeat(2, 180px);
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1799.98px) {
+    .countdown {
+        grid-template-columns: repeat(2, 151px);
         grid-template-rows: repeat(2, 180px);
     }
 }

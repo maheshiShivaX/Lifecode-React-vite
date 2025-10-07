@@ -1,26 +1,3 @@
-// export const getGuestId = () => {
-//     let guestId = localStorage.getItem('guest_id');
-
-//     if (!guestId) {
-//         // Generate a random 5-digit number between 10000 and 99999
-//         const randomId = Math.floor(10000 + Math.random() * 90000);
-//         guestId = `guest-${randomId}`;
-//         localStorage.setItem('guest_id', guestId);
-//     }
-
-//     // Extract numeric part and convert to integer
-//     const guestIntId = parseInt(guestId.split('-')[1], 10);
-
-//     return {
-//         full: guestId,
-//         int: guestIntId,
-//     };
-// };
-
-// export const clearGuestId = () => {
-//     localStorage.removeItem('guest_id');
-// };
-
 export const getGuestId = async () => {
     let guestId = localStorage.getItem("guest_id");
 

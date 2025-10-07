@@ -135,6 +135,10 @@
         background-color: transparent;
     }
 
+    .durable_our_tags_content {
+        margin-bottom: 28px;
+    }
+
     .description {
         font-size: 14px;
         line-height: normal;
@@ -144,6 +148,7 @@
     .durable_our_tags_hedding h2 {
         font-size: 25px;
         margin-top: 15px;
+        margin-bottom: 28px;
     }
 
     .durable_our_tags_show_hover img {
@@ -157,10 +162,15 @@
     .feature-box {
         border: none;
         padding: 34px 20px 0 0;
+        min-height: auto;
     }
 
     .durable_our_tags_weper {
         padding: 0 0 0;
+    }
+
+    .number {
+        font-size: 48px;
     }
 
 }

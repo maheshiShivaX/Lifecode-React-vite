@@ -142,6 +142,12 @@
 }
 
 @media (max-width: 575.98px) {
+
+    .privacy_security {
+        padding: 40px 0 0px;
+        position: relative;
+    }
+
     .sprivacy_security_hedding h2 {
         width: 100%;
         line-height: normal;
@@ -163,7 +169,7 @@
     }
 
     .privacy_security_content {
-        margin-bottom: 25px;
+        margin-bottom: 18px;
     }
 
     .privacy_security_btn {
@@ -187,7 +193,7 @@
         margin-bottom: 0 !important;
     }
 
-  
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {

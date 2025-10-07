@@ -34,7 +34,7 @@ const Footer = () => {
                                     </a>
                                 </li>
                                 <li className='hover-effect'>
-                                    <a href="#" >
+                                     <a href="https://wa.me/18017011806?text=Hi" target="_blank" rel="noreferrer">
                                         <img src="../images/Whatsapp.png" alt="" />
                                     </a>
                                 </li>
@@ -91,29 +91,29 @@ const Footer = () => {
                 </div>
                 <div className='row mt-3'>
                     <div className='col-lg-9 col-12 row'>
-                        <div className='col-lg-2 col-md-4 col-sm-4 col-6'>
+                        <div className='col-lg-2 col-md-4 col-sm-4 col-4'>
                             <div className='footer_band_logo'>
                                 <img src="/images/footerlogo1.png" alt="" />
                             </div>
                         </div>
-                        <div className='col-lg-2 col-md-4 col-sm-4 col-6'>
+                        <div className='col-lg-2 col-md-4 col-sm-4 col-4'>
                             <div className='footer_band_logo'>
                                 <img src="/images/footerlogo2.png" alt="" />
                             </div>
                         </div>
-                        <div className='col-lg-2 col-md-4 col-sm-4 col-6'>
+                        <div className='col-lg-2 col-md-4 col-sm-4 col-4'>
                             <div className='footer_band_logo'>
                                 <img src="/images/footerlogo3.png" alt="" />
                             </div>
                         </div>
-                        <div className='col-lg-2 col-md-4 col-sm-4 col-6'>
+                        <div className='col-lg-2 col-md-4 col-sm-4 col-4'>
                             <div className='footer_band_logo'>
                                 <img src="/images/footerlogo4.png" alt="" />
                             </div>
                         </div>
-                        <div className='col-lg-2 col-md-4 col-sm-4 col-6'>
+                        <div className='col-lg-2 col-md-4 col-sm-4 col-4'>
                             <div className='footer_band_logo'>
-                                <img src="/images/amazonefooterlogo.png" alt="" />
+                                <img src="/images/amazonefooterlogo.webp" alt="" />
                             </div>
                         </div>
                     </div>

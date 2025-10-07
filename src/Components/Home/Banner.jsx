@@ -2,6 +2,23 @@ import '@/ComponentsCss/Banner.css';
 import { useRef, useState, useEffect, useContext } from 'react';
 import { ShopContext } from '../../Context/ShopContext';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { Razorpay } from 'razorpay';
+
+// ✅ Load Magic Checkout script
+const loadMagicCheckout = () => {
+  return new Promise((resolve) => {
+    if (window.RazorpayCheckout) {
+      resolve(true);
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/razorpay.checkout.js";
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.body.appendChild(script);
+  });
+};
 
 const Banner = () => {
   const bigImageRef = useRef(null);
@@ -11,7 +28,7 @@ const Banner = () => {
   const navigate = useNavigate();
 
   const { onPreviousUrl, setProductId, products } = useContext(ShopContext);
-
+  const [loading, setLoading] = useState(false);
   // Auto change image every 2 seconds
   useEffect(() => {
     if (products.length > 0) {
@@ -60,6 +77,35 @@ const Banner = () => {
     setProductId(currentProduct?.id);
   };
 
+  const ProceedtoBuy = async () => {
+    setLoading(true);
+
+    const options = {
+      key: "rzp_live_8ih8SbHF9axtdc",   // ✅ Replace with your key
+      order_id: "order_RMDVTcc6CmLh76", // ✅ Must come from backend
+      amount: 39900,
+      currency: "INR",
+      name: "Your Business",
+      description: "Order Payment",
+      callback_url: "https://yourdomain.com/payment-callback",
+      redirect: true,
+      one_click_checkout: true,
+      show_coupons: true,
+      handler: function (response) {
+        console.log("✅ Payment Success:", response);
+      }
+    };
+
+    // ✅ Use window.RazorpayCheckout (not Razorpay from npm)
+    if (window.RazorpayCheckout) {
+      window.RazorpayCheckout.open(options);
+    } else {
+      alert("❌ Razorpay Magic Checkout not loaded");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <section className="banner_wepper">
       <div className="banner-content-main container d-flex align-items-end justify-content-between">
@@ -70,6 +116,13 @@ const Banner = () => {
             </h3>
             <p>BUT IF IT DOES, LIFECODE WILL HELP AND ASSIST.</p>
             <button onClick={onProductDetail}>Shop Now</button>
+            {/* <button
+              onClick={ProceedtoBuy}
+              disabled={loading}
+              style={{ padding: "10px 20px", background: "#333", color: "#fff" }}
+            >
+              {loading ? "Processing..." : "Proceed to Buy"}
+            </button> */}
           </div>
           <div className="banner-slider-wrep">
             <div className="banner-slider-inner">

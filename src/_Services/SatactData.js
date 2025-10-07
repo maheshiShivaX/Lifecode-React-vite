@@ -33,9 +33,9 @@ export const ServicesData = [
 export const SearchVehicleData = {
     title: "Search Any Vehicle by Number",
     description: "Search any vehicle and instantly find complete details like owner info, registration, model, and more in seconds.",
-    leftImage: "./images/searchleft.png",
-    rightImage: "./images/searchright.png",
-    mobileImage: "./images/mobile-show-only.png",
+    leftImage: "./images/searchleft.webp",
+    rightImage: "./images/searchright.webp",
+    mobileImage: "./images/mobile-show-only.webp",
     buttonText: "View Vehicle Details"
 }
 
@@ -77,47 +77,10 @@ export const OurProductData = [
     },
     {
         id: 1,
-        image: "./images/product1.png",
-        title: "Two Wheeler Sticker",
-        shotdescription: 'Sociosqu risus pharetra et, a iaculis odio.',
         heartIcon: "./images/hearticon.svg",
         cartIcon: './images/carticon.svg',
         eyeIcon: './images/eyeIcon.svg',
-    },
-    {
-        id: 2,
-        image: "./images/product1.png",
-        title: "Two Wheeler Sticker",
-        shotdescription: 'Sociosqu risus pharetra et, a iaculis odio.',
-    },
-    {
-        id: 3,
-        image: "./images/product1.png",
-        title: "Two Wheeler Sticker",
-        shotdescription: 'Sociosqu risus pharetra et, a iaculis odio.',
-
-    },
-    {
-        id: 4,
-        image: "./images/product1.png",
-        title: "Two Wheeler Sticker",
-        shotdescription: 'Sociosqu risus pharetra et, a iaculis odio.',
-
-    },
-    {
-        id: 5,
-        image: "./images/product1.png",
-        title: "Two Wheeler Sticker",
-        shotdescription: 'Sociosqu risus pharetra et, a iaculis odio.',
-
-    },
-    {
-        id: 6,
-        image: "./images/product1.png",
-        title: "Two Wheeler Sticker",
-        shotdescription: 'Sociosqu risus pharetra et, a iaculis odio.',
-
-    },
+    }
 ]
 
 export const LimitedOfferData =
@@ -241,9 +204,9 @@ export const novaData = {
 export const SmartBusinessCardData = {
     title: "Smart NFC Business Card",
     description: "NFC and QR based Smart Business Card, where you can share your business with just a tap on any NFC enabled phone.",
-    image: "./images/smartNfcBanner.png",
+    image: "./images/smartNfcBanner.webp",
     titleSmartDoor: 'Smart Doorbell',
-    imageSmartDoor: "./images/doorbell_banner.png",
+    imageSmartDoor: "./images/doorbell_banner.webp",
     SmartDoordescription: 'Lifecode is an innovative wireless video doorbell that uses QR code technology to replace outdated intercoms and traditional wired doorbells, offering convenience and security.',
     buttonText: "Shop Now",
     childMenu: [
@@ -310,7 +273,7 @@ export const SmartBusinessCardData = {
 export const LifecodeAppSecuritydData1 = {
     title: "Pet & Luggage Tag",
     hedding: "Lifecode App Features and Security",
-    image: "./images/LifecodeAppSecurityd_Banner.png",
+    image: "./images/LifecodeAppSecurityd_Banner.webp",
     buttonText: "More Details",
     subtitle: "What Lifecode App Offers",
     subhedding: "Pet & Luggage Tag",
@@ -354,7 +317,7 @@ export const LifecodeAppSecuritydData1 = {
 export const LifecodeAppSecuritydData = {
     title: "Car and Bike Parking Tag",
     hedding: "Lifecode App Features and Security",
-    image: "./images/LifecodeAppSecurityd_Banner1.png",
+    image: "./images/LifecodeAppSecurityd_Banner1.webp",
     buttonText: "More Details",
     subtitle: "What Lifecode App Offers",
     subhedding: "Car / Bike Parking Stickers",
@@ -398,11 +361,11 @@ export const LifecodeAppSecuritydData = {
 export const LifecodeAppSecuritydData2 = {
     title: "Car and Bike Parking Tag",
     hedding: "Lifecode App Features and Security",
-    image: "./images/doorbell_siticker.png",
+    image: "./images/doorbell_siticker.webp",
     buttonText: "More Details",
     subtitle: "What Lifecode App Offers",
-    subhedding: "Smart QR Doorbell – The Next Generation of Security",
-    subdescription: "Experience next-level convenience and security with our innovative QR-powered doorbell. Visitors simply scan the QR code to connect with you via video call – no wiring, no electricity, just smart living.",
+    subhedding: "Lifecode – Share, Navigate, and Stay Safe Anywhere, Even Without Internet",
+    subdescription: "Lifecode keeps you close to the people who matter most, even when networks fail. Share your location instantly, navigate safely offline, and stay prepared for any emergency—your lifeline wherever you go.",
     childMenu: [
         {
             id: 1,
@@ -433,27 +396,27 @@ export const GalleryMediaData = {
     childMenu: [
         {
             id: 1,
-            image: "./images/gallery1.png",
+            image: "./images/gallery1.webp",
         },
         {
             id: 2,
-            image: "./images/gallery2.png",
+            image: "./images/gallery2.webp",
         },
         {
             id: 3,
-            image: "./images/gallery3.png",
+            image: "./images/gallery3.webp",
         },
         {
             id: 4,
-            image: "./images/gallery1.png",
+            image: "./images/gallery1.webp",
         },
         {
             id: 5,
-            image: "./images/gallery2.png",
+            image: "./images/gallery2.webp",
         },
         {
             id: 6,
-            image: "./images/gallery3.png",
+            image: "./images/gallery3.webp",
         },
     ]
 }

@@ -8,17 +8,21 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Rating } from 'react-simple-star-rating';
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import { get, post } from "../../../_Services/apiService";
 import { API_URL } from "../../../_Services/apiUrl";
 import { formatDate1 } from "../../../utils/dateFormet";
+import { useContext } from "react";
+import { ShopContext } from "../../../Context/ShopContext";
 
 const CustomerReviews = ({ productBySlug }) => {
-    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const [productRatings, setProductRatings] = useState([]);
-    const navigate = useNavigate();
+
+    const {
+        isLoggedIn,
+        openModal
+    } = useContext(ShopContext);
 
     const [formData, setFormData] = useState({
         product_id: productBySlug?.id || null,
@@ -53,7 +57,8 @@ const CustomerReviews = ({ productBySlug }) => {
 
     const SaveReviews = async () => {
         if (!isLoggedIn) {
-            navigate('/login');
+            // navigate('/login');
+            openModal();
             sessionStorage.setItem('priviousUrl', `/${productBySlug?.slug}`);
             return;
         }

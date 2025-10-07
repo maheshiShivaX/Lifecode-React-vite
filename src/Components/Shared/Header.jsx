@@ -10,6 +10,10 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
     sessionStorage.getItem('isLoggedIn') === 'true'
   );
+  const [totalQuantity, setTotalQuantity] = useState();
+  const [hideHeader, setHideHeader] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
 
   const {
     wishlist,
@@ -20,13 +24,20 @@ const Header = () => {
     toggleMenu,
     setToggleMenu,
     homeHeader,
-    toggleDrawer
+    toggleDrawer,
+    // closeModal,
+    openModal
   } = useContext(ShopContext);
 
   useEffect(() => {
     const checkLogin = sessionStorage.getItem('isLoggedIn') === 'true';
     setIsLoggedIn(checkLogin);
   }, []);
+
+  useEffect(() => {
+    const totalQty = cart?.reduce((total, item) => total + Number(item.quantity || 0), 0);
+    setTotalQuantity(totalQty)
+  }, [cart])
 
   const onContact = () => {
     onPreviousUrl(`/contact-us`);
@@ -72,13 +83,46 @@ const Header = () => {
     setToggleMenu(false);
   };
 
-  const totalQuantity = cart?.reduce((total, item) => total + Number(item.quantity || 0), 0);
+  const onLogin = () => {
+    openModal();
+     setToggleMenu(false);
+  };
+
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Detect scroll direction for hide/show
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setHideHeader(true);
+      } else if (currentScrollY < lastScrollY) {
+        setHideHeader(false);
+      }
+
+      // Set isScrolled true if user scrolls down any amount
+      if (currentScrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   return (
     // Destop Header
     <>
       {/* <header className="header d-none d-lg-block"> */}
-      <div className='d-lg-none d-flex justify-content-between top_mobile_header'>
+      <div className={`d-lg-none d-flex justify-content-between top_mobile_header ${hideHeader ? 'hide-header' : ''}`}>
         <Link to={'/'}  >
           <img src="../images/logo.svg" alt="Logo" />
         </Link>
@@ -87,7 +131,12 @@ const Header = () => {
         </button>
       </div>
 
-      <header className={`name_header ${homeHeader ? 'header' : 'header_other_page'}  ${toggleMenu ? 'active' : ""}`}>
+      {/* <header className={`name_header ${homeHeader ? 'header' : 'header_other_page'}  ${toggleMenu ? 'active' : ""}`}> */}
+      <header className={`name_header 
+        ${homeHeader ? 'header' : 'header_other_page'} 
+        ${toggleMenu ? 'active' : ""} 
+        ${hideHeader ? 'hide-header' : ''}
+        ${homeHeader && isScrolled ? 'header-scrolled' : ''}`}>
         <div className={`container`}>
           <div className="d-lg-flex align-items-center justify-content-between header_inner_mobile">
             <div className='left_menu item-1'>
@@ -118,13 +167,11 @@ const Header = () => {
                 ) : (
                   <img src="../images/otherHeaderLogo.svg" alt="Logo" />
                 )}
-
-
-
               </Link>
-              <Link to={'/'} className='mobile_logo_drawer'>
+
+              <span onClick={onHome} className='mobile_logo_drawer'>
                 <img src="../images/logo.svg" alt="Logo" />
-              </Link>
+              </span>
               <p className='cross_icon' onClick={toggleDrawer}><i className="fi fi-rr-cross"></i></p>
             </div>
 
@@ -168,7 +215,7 @@ const Header = () => {
                           </ul>
                         ) : (
                           <ul>
-                            <li><Link to={'/login'} className='nav-link'>Login</Link></li>
+                            <li><span onClick={onLogin} className='nav-link'>Login</span></li>
                             <div className='bottom_border_mobile'></div>
                           </ul>
                         )}

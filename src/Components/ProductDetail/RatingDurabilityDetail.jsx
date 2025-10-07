@@ -28,15 +28,15 @@ const RatingDurabilityDetail = (props) => {
                 <span>Tag Durability</span>
                 <div className="tag-durability-content">
                     <div className="tag-durability-box">
-                        <img src="../images/durability.svg" alt="" />
+                        <img src="../../images/durability.svg" alt="" />
                         <p className="mb-0">Non Tearable</p>
                     </div>
                     <div className="tag-durability-box">
-                        <img src="../images/durability.svg" alt="" />
+                        <img src="../../images/water.svg" alt="" />
                         <p className="mb-0">Water Proof</p>
                     </div>
                     <div className="tag-durability-box">
-                        <img src="../images/durability.svg" alt="" />
+                        <img src="../../images/reflector.svg" alt="" />
                         <p className="mb-0">Reflector</p>
                     </div>
                 </div>

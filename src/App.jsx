@@ -71,9 +71,10 @@ function AppRoutes() {
       <ScrollToTop />
       <WishListDrawer />
       <CartDrawer />
+      <Login />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<PublicRoute element={<Login />} />} />
+        {/* <Route path="/login" element={<PublicRoute element={<Login />} />} /> */}
         <Route path="/signup" element={<Register />} />
         <Route path="/:slug" element={<ProductDetail />} />
 

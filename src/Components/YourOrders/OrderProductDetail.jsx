@@ -107,7 +107,7 @@ const OrderProductDetail = (props) => {
 
                 <div className="order_product_detail_btns">
                     {(item?.order_status !== "Canceled") && (
-                        item?.order_status === 'pending' ? (
+                        item?.order_status === 'pending' || item?.order_status === 'ongoing' ? (
                             <button className="CANCEL_ORDER" onClick={() => onCancel(item?.id)}>{'CANCEL ORDER'}</button>
                         ) : (
                             <button className="CANCEL_ORDER" onClick={() => onReturn(item?.id)}>{'Return/Exchange'}</button>
@@ -126,7 +126,7 @@ const OrderProductDetail = (props) => {
 
             <div className="order_head_order_id">
                 <p className="order_head_answr">OrderNo : {item?.id}</p>
-                {item?.order_status === "success" || item?.order_status === "pending" && (
+                {item?.order_status === "success" || item?.order_status === "pending" || item?.order_status === "ongoing" && (
                     <div onMouseEnter={() => setOrderId(item?.id)} className="" data-bs-toggle="modal" data-bs-target={`#${modalId}`}>
                         <button className="hover-effect px-0" >
                             View Order Details

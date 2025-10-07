@@ -30,7 +30,7 @@ const HowToActive = () => {
                         </div> */}
                         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 ">
                             <div className="activate_img_data">
-                                <img src="/images/how_to_active1.png" alt="" />
+                                <img src="/images/how_to_active1.webp" alt="" />
                             </div>
                         </div>
                         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 ">
@@ -68,14 +68,14 @@ const HowToActive = () => {
                         </div>
                         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 ">
                             <div className="activate_img_data">
-                                <img src="/images/how_to_active2.png" alt="" />
+                                <img src="/images/how_to_active2.webp" alt="" />
                             </div>
                         </div>
                     </div>
                     <div className="row row1 align-items-center flex_dairecion_use">
                         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 ">
                             <div className="activate_img_data">
-                                <img src="/images/how_to_active3.png" alt="" />
+                                <img src="/images/how_to_active3.webp" alt="" />
                             </div>
                         </div>
                         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 ">
@@ -104,14 +104,14 @@ const HowToActive = () => {
                         </div>
                         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 ">
                             <div className="activate_img_data">
-                                <img src="/images/how_to_active4.png" alt="" />
+                                <img src="/images/how_to_active4.webp" alt="" />
                             </div>
                         </div>
                     </div>
                     <div className="row row1 align-items-center flex_dairecion_use">
                         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 ">
                             <div className="activate_img_data">
-                                <img src="/images/how_to_active5.png" alt="" />
+                                <img src="/images/how_to_active5.webp" alt="" />
                             </div>
                         </div>
                         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 ">

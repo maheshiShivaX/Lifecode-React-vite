@@ -25,7 +25,8 @@ const MoreSafetyProducts = (props) => {
         onPreviousUrl,
         setProductId,
         setIsWishlistClick,
-        products
+        products,
+         openModal
     } = useContext(ShopContext);
 
     const filteredProducts = products?.filter(
@@ -35,7 +36,8 @@ const MoreSafetyProducts = (props) => {
     const handleWishlistToggle = (item) => {
 
         if (!isLoggedIn) {
-            navigate('/login');
+            // navigate('/login');
+            openModal();
             setProductId(item?.id);
             setIsWishlistClick(true);
             onPreviousUrl(`/${item?.slug}`);

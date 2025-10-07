@@ -70,6 +70,10 @@
     border: none;
 } */
 
+.testimonial-section .container {
+    overflow: hidden;
+}
+
 .testimonial_next_btn_wepper {
     padding: 15PX 0;
 }

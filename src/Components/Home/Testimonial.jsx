@@ -48,7 +48,7 @@ const Testimonial = () => {
                         {/* <p data-aos="fade-up" data-aos-delay="800">{TestimonialsData?.title}</p> */}
                         <h2 data-aos="fade-down" data-aos-delay="400">{TestimonialsData?.hedding}</h2>
                     </div>
-                    <div className='container mt-4 pt-4'>
+                    <div className='container mt-4 py-5'>
                         <Swiper
                             modules={[Navigation, Autoplay]}
                             spaceBetween={20}

@@ -29,6 +29,10 @@ const Checkout = () => {
     const [referrelApplied, setReferrelApplied] = useState(false);
     const [subTotal, setSubTotal] = useState(0);
     const [totalPayable, setTotalPayable] = useState(0);
+    const [paymentMethod, setPaymentMethod] = useState("razorpay"); // default
+    const [shippingCharge, setShippingCharge] = useState(0);
+    const [isCoupon, setIsCoupon] = useState(true);
+
     // const [isCart, setIsCart] = useState();
 
     const {
@@ -36,7 +40,11 @@ const Checkout = () => {
         setCartItemId,
         removeFromCart,
         productId,
-        setProductId
+        setProductId,
+        isCodModel,
+        openCodModal,
+        closeCodModal,
+        updateCart
     } = useContext(ShopContext);
 
     const isCart = cart?.some(item => Number(item.product_id) === Number(product_id || productId));
@@ -61,8 +69,8 @@ const Checkout = () => {
 
     useEffect(() => {
         setSubTotal(finalTotal);
-        setTotalPayable(finalTotal - (discountAmount + totalDiscount));
-    }, [finalTotal, discountAmount, totalDiscount]);
+        setTotalPayable(finalTotal - (discountAmount + totalDiscount) + shippingCharge);
+    }, [finalTotal, discountAmount, totalDiscount, shippingCharge]);
 
     const [addressFormData, setAddressFormData] = useState({
         contact_person_name: "",
@@ -307,8 +315,7 @@ const Checkout = () => {
                 toast.error("Invalid coupon code");
             }
         } catch (error) {
-            console.error("Error applying coupon:", error);
-            toast.error("Something went wrong while applying coupon.");
+            toast.error(error);
         }
     };
 
@@ -338,7 +345,30 @@ const Checkout = () => {
 
     }
 
-    const ProceedtoBuy = async () => {
+    const selectPaymentMethod = (method) => {
+        if (method === "cash_on_delivery") {
+            setPaymentMethod("cash_on_delivery");
+            setShippingCharge(100);
+            setIsCoupon(false);
+        } else {
+            setPaymentMethod("razorpay");
+            setIsCoupon(true);
+            setShippingCharge(0);
+        }
+    }
+
+    useEffect(() => {
+        if (cartItem?.length === 0) {
+            const timer = setTimeout(() => {
+                navigate('/products');
+            }, 1500); // 2000 ms = 2 seconds
+
+            // Cleanup the timer if the component unmounts before 2 seconds
+            return () => clearTimeout(timer);
+        }
+    }, [cartItem, navigate]);
+
+    const ProceedtoBuy = async (method) => {
 
         if (address === null || address.length === 0) {
             toast("Please fill address");
@@ -350,24 +380,21 @@ const Checkout = () => {
             return;
         }
 
+        // COD flow
+        if (paymentMethod === "cash_on_delivery" && !isCodModel) {
+            openCodModal();
+            return;
+        }
+
         try {
 
             const response = await get(API_URL.placeOrder, {
                 billing_address_id: selectedAddressId,
                 cart_item_id: cartItemId || "",
-                // isSingle: isCart ? true : false,
-                payment_method: "razorpay",
-                // cash_on_delivery
+                payment_method: method || paymentMethod,
                 coupon_code: appliedCoupon ? couponCode : "",
                 coupon_discount: appliedCoupon ? Math.round(discountAmount) : "",
-                //                 {
-                //     "cart_item_id": "5",
-                //     "payment_method": "razorpay",
-                //     "billing_address_id": 1,
-                //     "coupon_code": "SAKIL01234",
-                //     "coupon_discount": 799.2
-                // }
-
+                cod_charge: method === "cash_on_delivery" ? 100 : 0
             });
 
             if (response?.isSuccess === 1) {
@@ -392,7 +419,8 @@ const Checkout = () => {
                     modal: {
                         ondismiss: function () {
                             sessionStorage.setItem("payment_status", "cancelled");
-                            toast.info("Payment was cancelled.");
+                            window.location.href = OrderResponse.callback_url
+                            closeCodModal();
                         }
                     },
 
@@ -412,8 +440,26 @@ const Checkout = () => {
                     }
                 };
 
-                const razor = new window.Razorpay(options);
-                razor.open();
+                // const razor = new window.Razorpay(options);
+                if (window.RazorpayCheckout) {
+                    window.RazorpayCheckout.open(options); // Magic Checkout
+                } else {
+                    const rzp = new window.Razorpay(options); // Normal Checkout
+                    rzp.open();
+                }
+                // razor.open();
+
+                if (paymentMethod === "razorpay") {
+                    // if (window.RazorpayCheckout) {
+                    //     window.RazorpayCheckout.open(options); // Magic Checkout
+                    // } else {
+                    const rzp = new window.Razorpay(options); // Normal Checkout
+                    rzp.open();
+                    // }
+                } else {
+                    // COD logic
+                    openCodModal();
+                }
 
                 setCartItemId(cartItemId);
                 // setCouponCode("");
@@ -424,9 +470,40 @@ const Checkout = () => {
         }
     }
 
+    const onPopUpOrder = () => {
+        if (paymentMethod === 'cash_on_delivery') {
+            setPaymentMethod("razorpay");
+            setShippingCharge(0);
+            ProceedtoBuy("razorpay");
+            closeCodModal();
+        }
+    }
+
+    const onCodOrder = () => {
+        ProceedtoBuy("cash_on_delivery");
+        navigate(`/paymentreturn/cash_on_delivery`);
+        closeCodModal();
+    }
+
+    const closeCodeModel = () => {
+        closeCodModal();
+        // setPaymentMethod("razorpay");
+        // setShippingCharge(0);
+    }
+
     const back = () => {
         setIsForm(false);
     }
+
+    const incQty = (item) => {
+        updateCart(item, item?.quantity + 1);
+    };
+
+    const decQty = (item) => {
+        if (item?.quantity > 1) {
+            updateCart(item, item?.quantity - 1);
+        }
+    };
 
     const RemoveCartItem = (item) => {
         removeFromCart(item);
@@ -507,6 +584,19 @@ const Checkout = () => {
                                 cartItem={cartItem}
                                 RemoveCartItem={RemoveCartItem}
                                 onProductDetail={onProductDetail}
+                                isCodModel={isCodModel}
+                                openCodModal={openCodModal}
+                                closeCodModal={closeCodModal}
+                                paymentMethod={paymentMethod}
+                                setPaymentMethod={setPaymentMethod}
+                                selectPaymentMethod={selectPaymentMethod}
+                                shippingCharge={shippingCharge}
+                                onCodOrder={onCodOrder}
+                                closeCodeModel={closeCodeModel}
+                                isCoupon={isCoupon}
+                                onPopUpOrder={onPopUpOrder}
+                                incQty={incQty}
+                                decQty={decQty}
                             />
                         </div>
                     </div>

@@ -1,14 +1,14 @@
 /* Checkout Address Section */
 .checkout_address_inner {
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     background: #EDEDED;
     margin-bottom: 30px;
     padding: 25px 35px;
 }
 
 .checkout_address_inner.selected {
-    box-shadow: 0px 0px 5.79px 0px #8950B4 inset;
-    box-shadow: 0px 0px 20.03px 0px #724693 inset;
+    /* box-shadow: 0px 0px 20.03px 0px #724693 inset; */
+    border: 3px solid #724693;
 }
 
 .Saved_address_title {
@@ -114,9 +114,20 @@
     font-size: 15px;
     font-weight: 500;
     color: #ffffff;
+    display: flex;
+    align-items: center;
 }
 
-.order_summary_img_data img {
+.order_summary_img_data .checkout_inc_denc p {
+    height: 16px;
+    font-size: 16px;
+}
+
+.order_summary_img_data  .product_quantity .qty_heading {
+    font-size: 14px;
+}
+
+.order_summary_img_data .check_p_img {
     width: 120px;
     height: 120px;
     object-fit: cover;
@@ -130,8 +141,20 @@
 
 .order_summary_img_data .product_quantity {
     border: 1px solid #252525;
-    padding: 5px 25px;
+    padding: 5px 15px;
     border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.order_summary_img_data .product_quantity div {
+    gap: 3px !important;
+}
+
+.checkout_inc_denc img {
+    height: 12px;
 }
 
 .order_summary_img_data .cart_remove_item_btn_inner button {
@@ -162,6 +185,7 @@
     font-size: 24px;
     line-height: 100%;
     letter-spacing: 0%;
+    color: #505050;
 }
 
 .checkout .cart-summary-text,
@@ -172,7 +196,7 @@
 }
 
 .checkout .cart-summary-text span {
-    color: #242424;
+    color: #525252;
     font-family: Geist;
     font-weight: 700;
     font-size: 18px;
@@ -194,7 +218,72 @@
     font-size: 20px;
     line-height: 100%;
     letter-spacing: 0%;
-    color: #242424;
+    color: #525252;
+}
+
+.checkout .cart-summary-text1,
+.checkout .cart-summary-text1-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout .cart-summary-text1 span {
+    color: #525252;
+    font-family: "Geist", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.checkout .cart-summary-text1 span {
+    font-family: "Geist", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 213%;
+    letter-spacing: 0%;
+}
+
+.checkout .cart-summary-text1-total span {
+    font-family: "Geist", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #525252;
+}
+
+.cod_popup_heading h2 {
+    font-family: "Agency", sans-serif;
+    font-weight: 600;
+    font-style: Regular;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #724693;
+}
+
+.cod_popup_heading p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #2B2B2B;
+}
+
+.cod_model_close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
+}
+
+.cod_popup_heading {
+    margin: 40px 0 30px;
 }
 
 .summaryLine {
@@ -202,7 +291,7 @@
 }
 
 .coupon_code_sec {
-    margin: 35px 0px;
+    margin: 35px 0px 0px;
 }
 
 .referral_code_sec {
@@ -276,7 +365,7 @@
     padding-bottom: 12.99px;
     padding-left: 55.94px;
     gap: 9.99px;
-    border-radius: 15px;
+    border-radius: 100px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -284,6 +373,25 @@
     letter-spacing: 0%;
     color: #ffffff;
     border: none;
+}
+
+.checkout .checkout_procced_btn_cod button {
+    background: transparent;
+    width: 100%;
+    height: 55px;
+    padding-top: 12.99px;
+    padding-right: 55.94px;
+    padding-bottom: 12.99px;
+    padding-left: 55.94px;
+    gap: 9.99px;
+    border-radius: 100px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #2f2f2f;
+    border: 1px solid #000000;
 }
 
 .select_payment_mode {
@@ -389,11 +497,68 @@
     align-items: center;
 }
 
+/* .payment_method .payment_method_content .p_method {
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+} */
+
+.payment_method .payment_method_content .p_method label {
+    font-family: "Geist", sans-serif;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #171717;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.payment_method .payment_method_content .p_method p {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-style: "Regular";
+    font-size: 12px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    color: #E50C0C;
+}
+
+.payment_method .payment_method_content .p_method input {
+    height: 20px;
+    width: 20px;
+}
+
 /* Checkout Address Form End */
 
 @media (max-width: 575.98px) {
+
+    .coupon_code_input,
+    .referral_code_input {
+        gap: 3px;
+    }
+
+    .checkout .checkout_procced_btn_cod button,
+    .checkout .checkout_procced_btn button {
+        font-size: 16px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .payment_method .payment_method_content .p_method label {
+        font-size: 16px;
+    }
+
+    .payment_method .payment_method_content .p_method input {
+        height: 16px;
+        width: 16px;
+    }
+
     .order_summary_img_data .cart_remove_item_btn_inner button {
-        margin-top: 10px;
+        margin-top: 0px;
+        font-size: 14px !important;
     }
 
     .checkout_inner {
@@ -478,6 +643,16 @@
         width: 100px;
         margin-bottom: 10px;
     }
+
+    .order_summary_img_data {
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .order_summary_img_data img {
+        width: 100px;
+        height: 100px;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -556,7 +731,7 @@
     .checkout_contact_sec .checkout_number {
         margin-bottom: 15px !important;
     }
-    
+
     .cart_detail_buttons_wrapper {
         display: block !important;
     }

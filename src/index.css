@@ -73,7 +73,7 @@ section {
 }
 
 .display_description ul li {
-    list-style: disc !important;
+  list-style: disc !important;
 }
 
 .terms_and_conditions_inner,
@@ -114,7 +114,16 @@ section {
 .spinner {
   width: 60px;
   height: 60px;
-  border: 6px solid rgba(255, 255, 255, 0.2);
+  border: 6px solid rgb(127 50 50 / 20%);
+  border-radius: 50%;
+  border-top: 6px solid #5a47e5;
+  animation: spin 1.5s linear infinite;
+}
+
+.spinner1 {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgb(255 255 255 / 20%);
   border-radius: 50%;
   border-top: 6px solid #ffffff;
   animation: spin 1.5s linear infinite;
@@ -142,14 +151,59 @@ section {
   display: none;
 }
 
+.login_form_model {
+  /* min-width: 800px; */
+  max-height: 80vh;
+}
+
+.modal-content {
+  max-height: 80vh;
+}
+
+/* .modal-backdrop {
+  --bs-backdrop-bg: #000000 !important;
+  --bs-backdrop-opacity: 0.7 !important;
+} */
+
+.modal-backdrop.show {
+  background-color: #000000 !important;
+  backdrop-filter: blur(6px);
+  --bs-backdrop-bg: #000000 !important;
+  --bs-backdrop-opacity: 0.8 !important;
+}
+
 @media (max-width: 575.98px) {
+  .login_form_model {
+    min-width: 100%;
+    max-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-dialog {
+    margin: 0 !important;
+  }
+
+  .login-container .container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login_form_model .modal-content {
+    max-width: 97%;
+  }
+
   .bg_section_img .destop-none {
     display: block;
   }
-  .mobile_none{
+
+  .mobile_none {
     display: none;
   }
-  .bg_section_wepper{
+
+  .bg_section_wepper {
     padding: 0;
   }
 
@@ -170,9 +224,15 @@ section {
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .sec-padding-top {
+    padding-top: 0px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1100.98px) {
   .container {
-    max-width: 1520px !important;
+    max-width: 920px !important;
     width: 100%;
     margin: auto;
   }

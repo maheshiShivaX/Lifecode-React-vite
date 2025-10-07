@@ -15,7 +15,8 @@ const CartDrawer = () => {
         updateCart,
         onPreviousUrl,
         isLoggedIn,
-        setProductId
+        setProductId,
+        openModal
     } = useContext(ShopContext);
     const navigate = useNavigate();
 
@@ -55,7 +56,8 @@ const CartDrawer = () => {
             navigate('/checkout');
         } else {
             // Redirect to login page
-            navigate('/login');
+            // navigate('/login');
+            openModal();
             onPreviousUrl(`/checkout`);
         }
         closeCartDrawer();
@@ -94,7 +96,7 @@ const CartDrawer = () => {
                                     <CartSummary total={total} totalDiscount={totalDiscount} finalTotal={finalTotal} ProceedtoBuy={ProceedtoBuy} />
                                 </div>
                             ) : (
-                                <p className='cart_empty_text'>Cart is empty</p>
+                                <p className='cart_empty_text text-black'>Cart is empty</p>
                             )}
                         </div>
                     </div>

@@ -37,7 +37,7 @@ const SearchVehicle = () => {
         }
 
         try {
-            const response = await axios.post(`https://staging.lifecode.co.in/app/api/search_vehicle_no`, {
+            const response = await axios.post(`https://lifecode.co.in/app/api/search_vehicle_no`, {
                 vehicle_no: vehicleNo,
             });
 
@@ -67,7 +67,7 @@ const SearchVehicle = () => {
     const userEtag = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`https://staging.lifecode.co.in/app/Lifecodeapinew1/user_etag`, etagForm);
+            const response = await axios.post(`https://lifecode.co.in/app/Lifecodeapinew1/user_etag`, etagForm);
 
             if (response?.data?.status === 1) {
                 setIsDetailForm(false);
@@ -90,7 +90,7 @@ const SearchVehicle = () => {
 
     const verifyOtp = async (otp) => {
         try {
-            const response = await axios.post(`https://staging.lifecode.co.in/app/Lifecodeapinew1/verify_etag_otp`, {
+            const response = await axios.post(`https://lifecode.co.in/app/Lifecodeapinew1/verify_etag_otp`, {
                 mobile_number: etagForm.mobile_number,
                 otp: otp
             });
@@ -126,7 +126,7 @@ const SearchVehicle = () => {
 
     const getEtag = async () => {
         try {
-            const response = await axios.post(`https://staging.lifecode.co.in/app/api/send_etag_whatsapp`, {
+            const response = await axios.post(`https://lifecode.co.in/app/api/send_etag_whatsapp`, {
                 user_id: userId
             });
 
@@ -163,7 +163,7 @@ const SearchVehicle = () => {
                                         <img src={SearchVehicleData?.mobileImage} alt="" className='mobile_image' />
                                     </div>
                                 </div>
-                                <div className="col-lg-4 col-md-4 col-sm-4 mt-sm-0 my-4">
+                                <div className="col-lg-4 col-md-4 col-sm-4 mt-sm-0 mt-4">
                                     <div className="input-wrapper" data-aos="fade-down" data-aos-delay="1500">
                                         <input
                                             type="text"

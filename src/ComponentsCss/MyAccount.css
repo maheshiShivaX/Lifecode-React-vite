@@ -646,7 +646,7 @@
     .order_item {
         background: transparent;
         padding: 0;
-        margin: 0;
+        margin: 36px 0;
     }
 
     .order_head_order_id {
@@ -658,6 +658,10 @@
 
     .order_head_order_id button {
         font-size: 14px !important;
+    }
+
+    .my-account-button-inner {
+        width: 100%;
     }
 }
 
@@ -724,7 +728,8 @@
         margin-bottom: 0;
     }
 
-    .TrackOrder,.TrackOrder:hover {
+    .TrackOrder,
+    .TrackOrder:hover {
         display: flex;
         border-radius: 15px;
         background: none;

@@ -1,37 +1,9 @@
 import '@/ComponentsCss/PrivacyFocusedProducts.css';
 import { novaData, PrivacyFocusedProductsData, PrivacyFocusedProductsItemData } from '../../_Services/SatactData';
 import { Link } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
-
 
 const PrivacyFocusedProducts = () => {
-    const containerRef = useRef(null);
-    const contentRef = useRef(null);
-    const [isPaused, setIsPaused] = useState(false);
 
-    useEffect(() => {
-        let animationFrameId;
-        let scrollSpeed = 1;
-
-        const scroll = () => {
-            if (!isPaused && containerRef.current && contentRef.current) {
-                containerRef.current.scrollLeft += scrollSpeed;
-
-                // Reset scroll to start for seamless loop
-                if (
-                    containerRef.current.scrollLeft >=
-                    contentRef.current.scrollWidth - containerRef.current.clientWidth
-                ) {
-                    containerRef.current.scrollLeft = 0;
-                }
-            }
-            animationFrameId = requestAnimationFrame(scroll);
-        };
-
-        scroll();
-
-        return () => cancelAnimationFrame(animationFrameId);
-    }, [isPaused]);
     return (
         <>
             <section className='privacy_section'>
@@ -75,29 +47,12 @@ const PrivacyFocusedProducts = () => {
                     </div>
 
                 </div>
-                {/* <div
-                    className="scroll-container" data-aos="zoom-out-right" data-aos-delay="1000"
-                    data-aos-duration="1000"
-                    ref={containerRef}
-                    onMouseEnter={() => setIsPaused(true)}
-                    onMouseLeave={() => setIsPaused(false)}
-                >
-                    <div className="scroll-content" ref={contentRef}>
-                        <span className="scroll-item"><img src="/images/Motorcycle.svg" alt="" /> In Every Emergency, Lifecode is Your Lifeline</span>
-                        <span className="scroll-item"><img src="/images/Sedancarmodel.svg" alt="" />From Bikes to Cars, Safety Travels With You</span>
-                        <span className="scroll-item"><img src="/images/Fastdeliveryslider.svg" alt="" /> One Scan to Reach Your Loved Ones Instantly</span>
-                       
-                        <span className="scroll-item"><img src="/images/Motorcycle.svg" alt="" /> In Every Emergency, Lifecode is Your Lifeline </span>
-                        <span className="scroll-item"><img src="/images/Sedancarmodel.svg" alt="" /> From Bikes to Cars, Safety Travels With You </span>
-                        <span className="scroll-item"><img src="/images/Fastdeliveryslider.svg" alt="" /> One Scan to Reach Your Loved Ones Instantly </span>
-                    </div>
-                </div> */}
             </section>
 
             <section className='nova_bg'>
                 <div className='container'>
                     <div className='nova_logo'>
-                        <img src="/images/nova.svg" alt="" />
+                        <img src="/images/nova.png" alt="" />
                         <h4>Smart help, instant support, real safety</h4>
                     </div>
                     <div className="row">
@@ -117,7 +72,7 @@ const PrivacyFocusedProducts = () => {
                                     </div>
                                 ))}
                                 <div className="nova_btn">
-                                    <Link to="" className="nova_btn_inner">
+                                    <Link to="https://www.lifecode.co.in/register" target='_blank' className="nova_btn_inner">
                                         Try  <img src="/images/novaLogo.png" alt="" />
                                     </Link>
                                 </div>
@@ -126,11 +81,11 @@ const PrivacyFocusedProducts = () => {
                         </div>
                         <div className='col-lg-6 col-md-6 col-sm-12 col-12 destop_none p-0'>
                             <div className='novarightside'>
-                                <img src="/images/novarightside.png" alt="" />
+                                <img src="/images/novarightside.webp" alt="" />
                             </div>
                         </div>
                         <div className='novarightside mobile_none_nova'>
-                            <img src="/images/novarightside.png" alt="" />
+                            <img src="/images/novarightside.webp" alt="" />
                         </div>
                     </div>
                 </div>

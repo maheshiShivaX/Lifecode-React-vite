@@ -34,8 +34,8 @@ const CartSummary = (props) => {
                                         RETURN</p>
                                 </div>
                             </div>
-                            <div className="shop_main text-center">
-                                <p><img src="../images/Shoppingbag.png" alt="" />Shop for ₹99 more, and get ₹500 OFF</p>
+                            {/* <div className="shop_main text-center"> */}
+                                {/* <p><img src="../images/Shoppingbag.png" alt="" />Shop for ₹99 more, and get ₹500 OFF</p> */}
                                 {/* <button>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                     <g clipPath="url(#clip0_419_489)">
@@ -47,7 +47,7 @@ const CartSummary = (props) => {
                                         </clipPath>
                                     </defs>
                                 </svg>Shop more</button> */}
-                            </div>
+                            {/* </div> */}
                             <div className="cart_procced_btn">
                                 <div>
                                     <span>₹{`${Math.round(finalTotal)}.00/-`}</span>

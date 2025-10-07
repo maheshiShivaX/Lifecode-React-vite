@@ -11,6 +11,7 @@ export const ShopProvider = ({ children }) => {
     const [homeHeader, setHomeHeader] = useState(false);
     // Products State
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState([]);
 
     // CartItemId State
     const [orderType, setOrderType] = useState();
@@ -42,6 +43,17 @@ export const ShopProvider = ({ children }) => {
     // Cart State
     const [cart, setCart] = useState([]);
 
+    const [isLoginForm, setIsLoginForm] = useState(false);
+
+
+    const openModal = () => setIsLoginForm(true);
+    const closeModal = () => setIsLoginForm(false);
+
+    const [isCodModel, setIsCodModel] = useState(false);
+
+    const openCodModal = () => setIsCodModel(true);
+    const closeCodModal = () => setIsCodModel(false);
+
     // --- priviousUrl Functions ---
     const onPreviousUrl = (url) => {
         setPriviousUrl(url);
@@ -64,11 +76,14 @@ export const ShopProvider = ({ children }) => {
 
     useEffect(() => {
         const fetchProducts = async () => {
+            setLoading(true);
             try {
                 const response = await get(API_URL.products);
                 setProducts(response?.products || []);
             } catch {
                 setProducts([]);
+            } finally {
+                setLoading(false);
             }
         };
         fetchProducts();
@@ -230,7 +245,15 @@ export const ShopProvider = ({ children }) => {
                 products,
                 homeHeader,
                 setHomeHeader,
-                guestIntId
+                guestIntId,
+                loading,
+                isLoginForm,
+                setIsLoginForm,
+                openModal,
+                closeModal,
+                isCodModel,
+                openCodModal,
+                closeCodModal
             }}
         >
             {children}

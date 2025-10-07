@@ -29,7 +29,8 @@ const Products = () => {
         onPreviousUrl,
         setProductId,
         setIsWishlistClick,
-        isLoggedIn
+        isLoggedIn,
+         openModal
     } = useContext(ShopContext);
 
     useEffect(() => {
@@ -61,7 +62,8 @@ const Products = () => {
     const handleWishlistToggle = (item) => {
 
         if (!isLoggedIn) {
-            navigate('/login');
+            // navigate('/login');
+            openModal();
             setProductId(item?.id);
             setIsWishlistClick(true);
             onPreviousUrl(`/`);
